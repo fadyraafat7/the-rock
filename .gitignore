@@ -1,0 +1,19 @@
+# Whitelist: only theme, custom plugins, docs, tools
+/*
+!/.gitignore
+!/README.md
+!/docs/
+!/tools/
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/rockpack/
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/portable-seo/
+!/wp-content/plugins/portable-seo-mcp/
+!/wp-content/plugins/rockpack-local-page-cache/
+!/wp-content/plugins/rockpack-static-ssg/
+__pycache__/
+*.zip

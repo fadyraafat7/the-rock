@@ -1,0 +1,78 @@
+/* Missing-page layout uses the shared Rockpack navigation and footer. */
+.rp-not-found {
+    width: var(--company-page-width);
+    margin: 0 auto;
+    padding: clamp(48px, 6vw, 100px) 24px clamp(64px, 7vw, 120px);
+    background: #f2f8f5;
+    color: #0a4438;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+.rp-not-found__code {
+    margin: 0 0 24px;
+    color: #228c5c;
+    font-size: clamp(100px, 15vw, 220px);
+    font-weight: 800;
+    letter-spacing: -.06em;
+    line-height: 1;
+}
+.rp-not-found__eyebrow {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+.rp-not-found h1 {
+    margin: 0 0 20px;
+    font-size: clamp(30px, 3.5vw, 52px);
+    font-weight: 600;
+    letter-spacing: -.025em;
+}
+.rp-not-found__text {
+    max-width: 490px;
+    margin: 0 auto 28px;
+    color: #4b665e;
+    font-size: 16px;
+    line-height: 1.7;
+}
+.rp-not-found__home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    min-height: 48px;
+    padding: 12px 26px;
+    border-radius: 30px;
+    background: #0a4438;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 500;
+}
+.rp-not-found__home:hover, .rp-not-found__search button:hover { background: #17634d; }
+.rp-not-found__search { max-width: 460px; margin: 36px auto 0; }
+.rp-not-found__search label { display: block; margin-bottom: 12px; font-size: 14px; }
+.rp-not-found__search-controls { display: flex; gap: 8px; }
+.rp-not-found__search input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid #8aa99b;
+    border-radius: 8px;
+    background: #fff;
+    color: #0a4438;
+}
+.rp-not-found__search input::placeholder { color: #5b6f67; opacity: 1; }
+.rp-not-found__search button {
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: #0a4438;
+    color: #fff;
+    cursor: pointer;
+}
+@media (max-width: 400px) {
+    .rp-not-found__search-controls { flex-direction: column; }
+}

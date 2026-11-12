@@ -1,0 +1,104 @@
+/* Dimensions follow the supplied 1960px-wide Certifications design. */
+body.rockpack-certifications-page { margin: 0; background: #fff; color: #111; font-family: Inter, Arial, sans-serif; }
+.rockpack-certifications-page *, .rockpack-certifications-page *::before, .rockpack-certifications-page *::after { box-sizing: border-box; }
+.certifications-page { --cert-green: #3eb978; --cert-forest: #0a4438; --cert-grey: #f5f5f5; max-width: 1960px; margin: 0 auto; }
+.certifications-page h1, .certifications-page h2, .certifications-page p, .certifications-page ul, .certifications-page ol { margin: 0; }
+.certifications-page a { color: inherit; text-decoration: none; }
+.certifications-page button, .certifications-page input { font: inherit; }
+.certifications-page :focus-visible, .rockpack-certifications-page .rp-footer :focus-visible { outline: 2px solid #228c5c; outline-offset: 5px; }
+.rp-cert-section { width: 97.96%; margin: 0 auto; }
+.certifications-intro { text-align: center; padding: clamp(40px, 3.37vw, 66px) 10% clamp(50px, 5.2vw, 102px); }
+.certifications-intro h2 { font-size: clamp(28px, 2.857vw, 56px); color: var(--cert-green); font-weight: 500; letter-spacing: -.025em; }
+.certifications-intro > p { max-width: 1040px; width: 76%; margin: clamp(30px, 3.37vw, 66px) auto 0; color: #777; font-size: clamp(14px, 1.225vw, 24px); line-height: 1.58; }
+.certifications-standards { display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; padding: 0; margin-top: clamp(55px, 6.63vw, 130px) !important; }
+.certifications-standards li { display: flex; justify-content: center; align-items: center; gap: clamp(7px, .76vw, 15px); font-size: clamp(17px, 1.53vw, 30px); }
+.certifications-standards img { width: clamp(22px, 2.09vw, 41px); height: auto; }
+.certifications-production { min-height: clamp(480px, 45.56vw, 893px); background: var(--cert-grey); display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+.certifications-production__collage { position: relative; }
+.certifications-production__image { position: absolute; width: 34.48%; height: 46.25%; object-fit: cover; border-radius: clamp(14px, 1.53vw, 30px); }
+.certifications-production__image--low { left: 12.7%; top: 39.4%; }
+.certifications-production__image--high { left: 54.8%; top: 14.6%; }
+.certifications-production__copy { width: 70%; align-self: center; padding-top: 30px; font-size: clamp(14px, 1.225vw, 24px); line-height: 1.58; font-weight: 400; }
+.certifications-production__copy p + p { margin-top: clamp(32px, 3.2vw, 63px); }
+.certifications-accent { position: absolute; width: 7.8%; height: auto; pointer-events: none; }
+.certifications-accent--right { right: 0; top: 28%; }
+.certifications-quality { background: #fff; padding: clamp(55px, 5.37vw, 105px) 8.5% clamp(50px, 5.1vw, 100px); }
+.certifications-quality__header { display: grid; grid-template-columns: 38% 1fr; align-items: center; gap: 8%; padding: 0 4%; }
+.certifications-quality h2 { color: var(--cert-forest); font-size: clamp(27px, 2.857vw, 56px); font-weight: 600; letter-spacing: -.045em; white-space: nowrap; }
+.certifications-quality__header p { font-size: clamp(13px, 1.225vw, 24px); font-weight: 300; line-height: 1.35; letter-spacing: -.025em; }
+.certifications-quality__steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #85d8ac; border-bottom: 1px solid #85d8ac; margin-top: clamp(65px, 7.8vw, 153px) !important; min-height: clamp(85px, 8.42vw, 165px); align-items: center; }
+.certifications-quality__steps li { text-align: center; position: relative; text-transform: uppercase; font-size: clamp(9px, .816vw, 16px); color: #555; }
+.certifications-quality__steps span { position: absolute; right: 0; color: #3eb978; font-size: 20px; line-height: .7; }
+.certifications-partners { background: var(--cert-grey); position: relative; overflow: hidden; }
+.certifications-partners__inner { width: 74%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 14%; align-items: center; min-height: clamp(440px, 39.23vw, 769px); }
+.certifications-partners__copy { font-size: clamp(14px, 1.225vw, 24px); line-height: 1.58; }
+.certifications-partners__copy p + p { margin-top: clamp(32px, 3.77vw, 74px); }
+.certifications-partners__media { position: relative; justify-self: end; width: min(26.53vw, 520px); aspect-ratio: 1; transform: translateX(min(3.2vw, 62px)); }
+.certifications-partners__image { width: 100%; height: 100%; object-fit: cover; border-radius: clamp(16px, 1.53vw, 30px); transform: scaleX(-1); }
+.certifications-partners__badge { position: absolute; left: -12.5%; top: 60%; width: 25%; height: auto; }
+.certifications-accent--left { left: 0; top: 21%; }
+.certifications-commitment { background: var(--cert-forest); color: #fff; text-align: center; padding: clamp(65px, 6.55vw, 128px) 15% clamp(80px, 8.77vw, 172px); }
+.certifications-commitment h2 { font-size: clamp(25px, 2.45vw, 48px); font-weight: 600; letter-spacing: -.025em; }
+.certifications-commitment p { width: min(100%, 48vw); max-width: 940px; margin: clamp(28px, 3.36vw, 66px) auto 0; font-size: clamp(19px, 1.837vw, 36px); line-height: 1.333; color: #e0e9e6; letter-spacing: -.025em; }
+@media (max-width: 850px) {
+  .certifications-intro { padding-left: 5%; padding-right: 5%; }
+  .certifications-intro > p { width: 100%; }
+  .certifications-production { grid-template-columns: 1fr; min-height: 0; padding: 35px 7% 55px; }
+  .certifications-production__collage { height: 330px; width: min(100%, 450px); justify-self: center; }
+  .certifications-production__image { height: 240px; width: 39%; }
+  .certifications-production__image--low { left: 4%; top: 75px; }
+  .certifications-production__image--high { left: 55%; top: 0; }
+  .certifications-production__copy { width: 100%; max-width: 570px; margin: auto; padding-top: 28px; }
+  .certifications-accent--right { top: 60%; width: 9%; }
+  .certifications-quality { padding: 50px 7%; }
+  .certifications-quality__header { grid-template-columns: 1fr; gap: 24px; padding: 0; }
+  .certifications-quality h2 { white-space: normal; }
+  .certifications-quality__steps { margin-top: 40px !important; }
+  .certifications-partners__inner { width: 80%; gap: 38px; padding: 50px 0; grid-template-columns: 1fr; }
+  .certifications-partners__media { width: min(80%, 360px); justify-self: center; transform: none; }
+  .certifications-accent--left { width: 9%; top: 48%; }
+  .certifications-commitment { padding: 60px 9% 70px; }
+  .certifications-commitment p { width: 100%; }
+}
+@media (max-width: 420px) {
+  .rp-inner-hero h1 { font-size: 30px; }
+  .rp-inner-hero__lines { width: 40%; }
+  .certifications-standards li { font-size: 16px; gap: 6px; }
+  .certifications-quality__steps { grid-template-columns: 1fr; padding: 10px 20px; }
+  .certifications-quality__steps li { padding: 18px 0; font-size: 11px; }
+  .certifications-quality__steps span { right: 50%; top: 100%; transform: rotate(90deg); margin-top: -4px; }
+}
+@media (min-width: 851px) {
+  .certifications-quality__steps { display: flex; justify-content: space-between; }
+  .certifications-quality__steps li { text-align: left; font-size: clamp(12px, 1vw, 19px); color: #333; }
+  .certifications-quality__steps li:last-child { text-align: right; }
+}
+@media (min-width: 851px) {
+  .certifications-partners__copy { padding-left: 8%; font-size: clamp(13px, 1vw, 19px); line-height: 1.7; }
+  .certifications-partners__copy p:first-child { font-size: clamp(16px, 1.22vw, 24px); font-weight: 500; }
+  .certifications-quality__steps li:not(:last-child) { padding-right: 38px; }
+}
+@media (min-width: 851px) {
+  .certifications-quality__steps { position: relative; }
+  .certifications-quality__steps li { position: static; }
+  .certifications-quality__steps span { top: 50%; right: auto; transform: translate(-50%, -50%); }
+  .certifications-quality__steps li:first-child span { left: 33.333%; }
+  .certifications-quality__steps li:nth-child(2) span { left: 66.666%; }
+}
+
+/* Quality assurance step typography from Figma. */
+.certifications-quality__steps li { font-family: Inter, Arial, sans-serif; font-size: 20px; font-weight: 400; line-height: 26px; letter-spacing: .25px; color: #434343; text-transform: uppercase; }
+@media (max-width: 550px) { .certifications-quality__steps li { font-size: 16px; line-height: 22px; } }
+@media (min-width: 851px) {
+  .certifications-quality__steps { padding-inline: 3.3%; }
+  .certifications-quality__steps li:first-child span { left: 31%; }
+  .certifications-quality__steps li:nth-child(2) span { left: 74%; }
+}
+
+/* Partner copy typography shown in the Figma reference. */
+.certifications-partners__copy { font-family: Inter, Arial, sans-serif; color: #000; letter-spacing: 0; }
+.certifications-partners__copy p:first-child { font-size: 20px; font-weight: 500; line-height: 30px; }
+.certifications-partners__copy p + p { font-size: 20px; font-weight: 400; line-height: 38px; }
+@media (max-width: 850px) {
+  .certifications-partners__copy p:first-child, .certifications-partners__copy p + p { font-size: 18px; line-height: 28px; }
+}

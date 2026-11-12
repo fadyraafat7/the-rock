@@ -1,0 +1,78 @@
+/* Planet & Societal Impact: original PDF layout, with fluid accessible content. */
+.planet-page { max-width: 1960px; margin: 0 auto; background: #f5f5f5; }
+.planet-page h1, .planet-page h2, .planet-page h3, .planet-page p, .planet-page figure { margin: 0; }
+.planet-page h2 { font-size: clamp(26px, 1.837vw, 36px); font-weight: 500; line-height: 1.25; letter-spacing: -.025em; }
+.planet-page [id] { scroll-margin-top: 24px; }
+.planet-page .rp-inner-hero h1 { margin-bottom: 0; }
+.planet-page .rp-inner-hero__image { object-position: center 37.05%; }
+.planet-sourcing, .planet-vision, .planet-esg, .planet-statement { width: var(--company-page-width); margin: 0 auto; }
+.planet-page__copy { min-width: 0; }
+.planet-page__copy p { font-size: clamp(14px, 1.02vw, 20px); line-height: 1.7; color: #777; font-weight: 400; text-transform: none; }
+.planet-page__copy h2 + p { margin-top: clamp(30px, 3.06vw, 60px); }
+.planet-page__copy p + p { margin-top: clamp(25px, 1.837vw, 36px); }
+.planet-sourcing { display: grid; grid-template-columns: 27% 46%; gap: 17.8%; align-items: center; padding: clamp(65px, 5.1vw, 100px) 10.16% clamp(65px, 5.92vw, 116px); position: relative; overflow: hidden; }
+.planet-sourcing__image { display: block; width: 100%; height: auto; aspect-ratio: 413 / 510; object-fit: cover; border-radius: clamp(20px, 1.84vw, 36px); }
+.planet-sourcing .planet-page__copy { max-width: min(600px, 30.61vw); }
+.planet-sourcing .home-angle-accent { position: absolute; right: 0; top: 30%; width: 9%; height: 55%; pointer-events: none; }
+.planet-vision { display: grid; grid-template-columns: 48% 36%; gap: 16%; align-items: center; padding: clamp(25px, 2.14vw, 42px) 12% clamp(25px, 2.14vw, 42px) 7.76%; background: #fff; }
+.planet-vision__figure { min-width: 0; position: relative; }
+.planet-vision__image { display: block; width: 100%; height: auto; aspect-ratio: 555 / 562; object-fit: cover; object-position: right; border-radius: clamp(20px, 1.84vw, 36px); }
+.planet-vision__badge { position: absolute; top: 57.5%; left: -12%; width: 24%; aspect-ratio: 132 / 140; background: #3eb978; display: grid; place-items: center; border-radius: 7px; }
+.planet-vision__badge img { width: 54%; height: 72%; }
+.planet-esg { padding: clamp(65px, 4.39vw, 86px) 3.75% clamp(65px, 5.1vw, 100px); }
+.planet-esg__header { display: grid; grid-template-columns: 49% 45%; gap: 6%; align-items: center; padding: 0 8.4%; }
+.planet-esg__header h2 { max-width: 690px; color: #0a4438; font-size: clamp(30px, 2.96vw, 58px); line-height: 1.05; font-weight: 600; text-wrap: balance; }
+.planet-esg__header p { font-size: clamp(16px, 1.224vw, 24px); line-height: 1.3; color: #333; letter-spacing: -.045em; }
+.planet-esg__pillars { display: grid; grid-template-columns: 32% 36% 32%; counter-reset: planet-pillar; list-style: none; padding: 0; margin: clamp(70px, 6.73vw, 132px) 0 0; border-block: 1px solid #88d5ac; }
+.planet-esg__pillars > li { counter-increment: planet-pillar; padding: clamp(25px, 1.63vw, 32px) 13% clamp(25px, 1.53vw, 30px); min-width: 0; }
+.planet-esg__pillars > li + li { border-left: 1px solid #88d5ac; }
+.planet-esg__pillars > li::before { content: counter(planet-pillar, decimal-leading-zero); display: block; font-size: clamp(34px, 2.45vw, 48px); line-height: 1.2; color: #3eb978; margin-bottom: clamp(24px, 1.84vw, 36px); }
+.planet-esg__pillars h3 { font-size: clamp(23px, 1.837vw, 36px); line-height: 1.2; font-weight: 500; letter-spacing: -.025em; }
+.planet-esg__pillars ul { list-style: disc; padding-left: 1.2em; margin: clamp(30px, 2.55vw, 50px) 0 0; color: #777; font-size: clamp(12px, .816vw, 16px); line-height: 1.65; text-transform: none; }
+.planet-esg__pillars ul li + li { margin-top: clamp(20px, 1.33vw, 26px); }
+.planet-statement { min-height: clamp(390px, 28.93vw, 567px); padding: clamp(90px, 7.65vw, 150px) 15% clamp(90px, 6.12vw, 120px); text-align: center; color: #fff; background: #0a4438; }
+.planet-statement h2 { font-size: clamp(32px, 2.45vw, 48px); font-weight: 600; }
+.planet-statement p { max-width: min(790px, 40.31vw); margin: clamp(40px, 3.67vw, 72px) auto 0; font-size: clamp(24px, 2.04vw, 40px); line-height: 1.25; letter-spacing: -.025em; }
+.rockpack-planet-page .rp-footer { border-top: 0; }
+@media (max-width: 1100px) and (min-width: 851px) {
+  .planet-sourcing { grid-template-columns: 30% 52%; gap: 14%; padding-left: 8%; padding-right: 8%; }
+  .planet-vision { grid-template-columns: 51% 38%; gap: 11%; padding-left: 7%; padding-right: 7%; }
+  .planet-esg__pillars > li { padding-left: 9%; padding-right: 9%; }
+}
+@media (max-width: 850px) {
+  .planet-page .rp-inner-hero__copy { padding: 0 7%; }
+  .planet-page .rp-inner-hero h1 { font-size: clamp(30px, 5.5vw, 42px); line-height: 1.2; }
+  .planet-sourcing, .planet-vision { grid-template-columns: 1fr; gap: 35px; padding: 55px 8%; }
+  .planet-sourcing__image { width: min(100%, 360px); max-height: 440px; justify-self: center; }
+  .planet-sourcing .planet-page__copy { max-width: none; }
+  .planet-sourcing .home-angle-accent { display: none; }
+  .planet-page__copy p { font-size: 14px; line-height: 1.7; }
+  .planet-page__copy h2 + p { margin-top: 25px; }
+  .planet-vision__figure { width: min(92%, 450px); justify-self: end; }
+  .planet-vision__image { border-radius: 22px; }
+  .planet-vision__badge { max-width: 95px; }
+  .planet-esg { padding: 55px 8%; }
+  .planet-esg__header { grid-template-columns: 1fr; gap: 25px; padding: 0; }
+  .planet-esg__header h2 { font-size: 32px; line-height: 1.1; }
+  .planet-esg__header p { font-size: 16px; line-height: 1.5; letter-spacing: -.025em; }
+  .planet-esg__pillars { grid-template-columns: 1fr; margin-top: 40px; }
+  .planet-esg__pillars > li { padding: 30px 5%; }
+  .planet-esg__pillars > li + li { border-left: 0; border-top: 1px solid #88d5ac; }
+  .planet-esg__pillars > li::before { margin-bottom: 15px; font-size: 36px; }
+  .planet-esg__pillars h3 { font-size: 25px; }
+  .planet-esg__pillars ul { margin-top: 25px; font-size: 14px; }
+  .planet-statement { min-height: 0; padding: 75px 8%; }
+  .planet-statement h2 { font-size: 30px; }
+  .planet-statement p { max-width: 550px; margin-top: 30px; font-size: 24px; }
+}
+.planet-page__copy p, .planet-esg__pillars ul { text-transform: none; }
+.planet-page__copy p { font-size: clamp(14px, .92vw, 18px); line-height: 1.55; color: #555; }
+
+/* Sustainable sourcing paragraph typography from Figma. */
+.planet-sourcing .planet-page__copy p { max-width: 552px; font-family: Inter, Arial, sans-serif; font-size: 20px; font-weight: 400; line-height: 30px; letter-spacing: 0; color: #666; }
+@media (max-width: 850px) { .planet-sourcing .planet-page__copy p { font-size: 16px; line-height: 24px; } }
+
+/* Vision for Africa text from the Figma inspection. */
+.planet-vision .planet-page__copy p { max-width: 749px; font-family: Inter, Arial, sans-serif; font-size: 20px; font-weight: 400; line-height: 30px; letter-spacing: 0; color: #666; }
+@media (max-width: 850px) { .planet-vision .planet-page__copy p { font-size: 16px; line-height: 24px; } }
+@media (min-width: 1101px) { .planet-vision { grid-template-columns: 50.3% 36%; gap: 13.7%; } }

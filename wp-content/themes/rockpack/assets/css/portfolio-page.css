@@ -1,0 +1,96 @@
+/* Product Portfolio reference, fitted to a 1920px page. */
+body.rockpack-portfolio-page { --company-page-width: 100%; --home-forest: #0a4438; --home-green: #3eb978; background: #f5f5f5; }
+.portfolio-page { max-width: 1920px; margin: 0 auto; background: #f5f5f5; }
+.portfolio-page h1, .portfolio-page h2, .portfolio-page h3, .portfolio-page p, .portfolio-page ol, .portfolio-page ul, .portfolio-page figure { margin: 0; }
+.portfolio-page img { max-width: 100%; }
+.portfolio-page button { cursor: pointer; }
+.portfolio-page h2 { font-size: clamp(28px, 2.5vw, 48px); font-weight: 500; line-height: 1.2; letter-spacing: -.025em; }
+.portfolio-page [id] { scroll-margin-top: 25px; }
+.portfolio-page .rp-inner-hero { height: clamp(270px, 26.042vw, 500px); }
+.portfolio-page .rp-inner-hero__image { object-position: center 22.58%; }
+.portfolio-page .rp-inner-hero h1 { margin-bottom: 0; }
+.portfolio-intro { padding: clamp(70px, 8.54vw, 164px) 0 clamp(25px, 1.56vw, 30px); }
+.portfolio-intro > h2 { color: #0a4438; font-weight: 600; margin-left: 7%; }
+.portfolio-intro__header { text-align: center; margin: clamp(45px, 3.125vw, 60px) 10% 0; }
+.portfolio-intro__header h3 { font-size: clamp(28px, 2.5vw, 48px); line-height: 1.2; font-weight: 500; letter-spacing: -.025em; }
+.portfolio-intro__header p { max-width: min(950px, 49.48vw); margin: clamp(20px, 1.04vw, 20px) auto 0; font-size: clamp(14px, 1.042vw, 20px); line-height: 1.3; color: #777; }
+.portfolio-quality { position: relative; overflow: hidden; min-height: clamp(280px, 18.7vw, 359px); padding: clamp(65px, 5vw, 96px) 14% clamp(65px, 5.21vw, 100px); background: #0a4438; color: white; text-align: center; }
+.portfolio-quality > div { max-width: min(1100px, 57.29vw); margin: clamp(20px, 1.04vw, 20px) auto 0; font-size: clamp(14px, 1.042vw, 20px); line-height: 1.3; font-weight: 300; }
+.portfolio-quality .home-angle-accent { position: absolute; top: 0; right: 0; height: 100%; width: 9%; pointer-events: none; opacity: .6; }
+.portfolio-quality .home-angle-accent path:first-child { fill: #3eb978; fill-opacity: .45; }
+.portfolio-quality .home-angle-accent path:last-child { stroke: #b4e4c9; }
+.portfolio-materials { display: grid; grid-template-columns: 46.2% 44%; gap: 9.8%; align-items: start; padding: clamp(65px, 5.21vw, 100px) 11.4% clamp(55px, 3.7vw, 71px); background: white; }
+.portfolio-materials__image { display: block; width: 100%; height: auto; aspect-ratio: 685 / 724; object-fit: cover; border-radius: clamp(18px, 1.56vw, 30px); }
+.portfolio-materials__copy { min-width: 0; padding-top: clamp(35px, 4.06vw, 78px); }
+.portfolio-materials h2 { font-size: clamp(26px, 1.875vw, 36px); font-weight: 500; letter-spacing: -.025em; }
+.portfolio-materials__copy > p { max-width: min(600px, 31.25vw); margin-top: clamp(14px, .73vw, 14px); font-size: clamp(12px, .833vw, 16px); line-height: 1.625; color: #777; }
+.portfolio-materials__steps { --step-number-size: clamp(33px, 2.292vw, 44px); margin-top: clamp(32px, 2.5vw, 48px); height: clamp(330px, 24.17vw, 464px); overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; scrollbar-color: #a1d8b8 transparent; }
+.portfolio-materials__steps ol { list-style: none; padding: 0 5px 0 clamp(65px, 5.31vw, 102px); position: relative; }
+.portfolio-materials__steps ol::before { content: ''; position: absolute; top: calc(var(--step-number-size) / 2); bottom: calc(var(--step-number-size) / 2); left: clamp(21px, 1.875vw, 36px); width: 1px; background: #3eb978; }
+.portfolio-materials__steps li { position: relative; }
+.portfolio-materials__steps li + li { margin-top: clamp(20px, 1.46vw, 28px); }
+.portfolio-materials__steps article { background: #f5f5f5; border-radius: clamp(20px, 1.82vw, 35px); padding: clamp(30px, 3.125vw, 60px) clamp(25px, 3.75vw, 72px) clamp(25px, 2.083vw, 40px); min-height: clamp(180px, 12.66vw, 243px); }
+.portfolio-materials__steps h3 { font-size: clamp(17px, 1.146vw, 22px); line-height: 1.2; font-weight: 500; }
+.portfolio-materials__steps p { font-size: clamp(12px, .833vw, 16px); line-height: 1.625; color: #777; font-weight: 300; margin-top: 12px; }
+.portfolio-materials__number { position: absolute; left: calc(clamp(21px, 1.875vw, 36px) - clamp(65px, 5.31vw, 102px) - var(--step-number-size) / 2); top: 0; width: var(--step-number-size); height: var(--step-number-size); display: grid; place-items: center; border: 1px solid #3eb978; border-radius: 50%; background: white; color: #3eb978; font-size: clamp(12px, .833vw, 16px); }
+.portfolio-page .rp-process, .portfolio-page .rp-local { background: #f5f5f5; }
+.portfolio-page .process-hdr h2 { font-size: clamp(26px, 1.875vw, 36px); }
+.portfolio-page .process-hdr p { margin: clamp(22px, 1.56vw, 30px) auto 0; }
+.portfolio-page .process-grid { margin-top: clamp(40px, 3.125vw, 60px); }
+.rockpack-portfolio-page .rp-footer { width: 100%; padding-left: 12.94%; padding-right: 12%; }
+.rockpack-portfolio-page .footer-nl p { margin-top: 25px; }
+.rockpack-portfolio-page .footer-social > p { margin-bottom: 25px; }
+.rockpack-portfolio-page .footer-info p + h5 { margin-top: 45px; }
+@media (max-width: 1100px) and (min-width: 851px) {
+  .portfolio-materials { padding-left: 8%; padding-right: 8%; gap: 7%; grid-template-columns: 46% 47%; }
+  .portfolio-materials__copy { padding-top: 15px; }
+  .portfolio-materials__steps article { padding: 28px; }
+}
+@media (max-width: 850px) {
+  .portfolio-page .rp-inner-hero h1 { font-size: clamp(30px, 5.5vw, 42px); }
+  .portfolio-page .rp-inner-hero__image { width: 160%; max-width: none; left: -30%; }
+  .portfolio-intro { padding: 60px 0 40px; }
+  .portfolio-intro > h2 { margin: 0 8%; font-size: 30px; }
+  .portfolio-intro__header { margin: 35px 8% 0; }
+  .portfolio-intro__header h3 { font-size: 28px; }
+  .portfolio-intro__header p { max-width: 550px; font-size: 14px; line-height: 1.6; }
+  .portfolio-quality { padding: 55px 9%; min-height: 0; }
+  .portfolio-quality > div { max-width: 550px; font-size: 14px; line-height: 1.6; }
+  .portfolio-quality h2 { font-size: 29px; }
+  .portfolio-quality .home-angle-accent { width: 12%; opacity: .3; }
+  .portfolio-materials { grid-template-columns: 1fr; gap: 35px; padding: 55px 8%; }
+  .portfolio-materials__image { width: min(100%, 500px); justify-self: center; max-height: 500px; }
+  .portfolio-materials__copy { padding-top: 0; }
+  .portfolio-materials h2 { font-size: 28px; }
+  .portfolio-materials__copy > p { max-width: none; font-size: 14px; line-height: 1.6; }
+  .portfolio-materials__steps { height: auto; overflow: visible; }
+  .portfolio-materials__steps ol { padding: 0 0 0 55px; }
+  .portfolio-materials__steps ol::before { left: 16px; }
+  .portfolio-materials__number { left: -55px; width: 33px; height: 33px; font-size: 12px; }
+  .portfolio-materials__steps article { min-height: 0; padding: 25px; border-radius: 20px; }
+  .portfolio-materials__steps h3 { font-size: 18px; }
+  .portfolio-materials__steps p { font-size: 14px; line-height: 1.6; }
+  .rockpack-portfolio-page .rp-footer { padding: 50px 9% 25px; }
+  .rockpack-portfolio-page .footer-info p + h5 { margin-top: 25px; }
+}
+.portfolio-materials__steps { scrollbar-width: none; }
+.portfolio-materials__steps::-webkit-scrollbar { display: none; }
+.portfolio-materials__steps h3 { font-size: clamp(16px, 1.04vw, 20px); font-weight: 600; }
+.portfolio-materials__steps p { font-size: clamp(14px, .94vw, 18px); color: #555; font-weight: 400; }
+@media (min-width: 851px) {
+  .portfolio-materials__steps { height: clamp(430px, 29vw, 560px); }
+  .portfolio-materials__steps article { padding-top: 20px; padding-bottom: 20px; }
+}
+
+/* Process and Materials body text from Figma. */
+.portfolio-materials__steps p { max-width: 385px; font-family: Inter, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25.6px; letter-spacing: 0; color: #666; }
+@media (max-width: 850px) { .portfolio-materials__steps p { font-size: 16px; line-height: 23px; } }
+.portfolio-materials__steps h3 { font-family: Inter, Arial, sans-serif; font-size: 20px; font-weight: 500; line-height: 30px; letter-spacing: 0; color: #000; }
+@media (max-width: 850px) { .portfolio-materials__steps h3 { font-size: 18px; line-height: 27px; } }
+
+/* Match the card text spacing in the Figma reference. */
+.portfolio-materials__steps p { margin-top: 4px; }
+@media (min-width: 851px) {
+  .portfolio-materials__steps li + li article { padding-top: clamp(28px, 3.125vw, 60px); }
+}
+@media (min-width: 851px) { .portfolio-materials__steps li:nth-child(2) p { max-width: 335px; } }
