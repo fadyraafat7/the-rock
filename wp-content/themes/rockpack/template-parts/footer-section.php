@@ -2,7 +2,8 @@
 $address = rp_option( 'contact_address', '54 Elharby, Cairo, Arab Republic of Egypt, North Africa' );
 $phone   = rp_option( 'contact_phone',   '+201154232620' );
 $phone_link = preg_replace( '/[^0-9+]/', '', $phone );
-$copyright = str_replace( '{year}', wp_date( 'Y' ), rp_option( 'footer_copyright', '© Copyright {year} – Pledge Communications. All Rights Reserved.' ) );
+$copyright = rp_option( 'footer_copyright', '© Copyright – Pledge Communications. All Rights Reserved.' );
+$copyright = preg_replace( '/\s*(?:\{year\}|\b2026\b)/u', '', $copyright );
 $copyright_parts = explode( 'Pledge Communications', $copyright );
 $socials = array_filter( rockpack_collection( 'footer_social' ), static function ( $social ) {
   return ! empty( $social['title'] ) && ! empty( $social['url'] )
@@ -16,7 +17,7 @@ $socials = array_filter( rockpack_collection( 'footer_social' ), static function
   <div class="footer-grid">
     <div class="footer-nl">
       <h4><?php echo esc_html( rp_option( 'footer_newsletter_heading', 'Subscribe to our newsletter' ) ); ?></h4>
-      <p>Get exclusive insights delivered directly to your inbox.</p>
+      <p><?php echo esc_html( rp_option( 'footer_newsletter_text', rockpack_editor_defaults()['footer_newsletter_text'] ) ); ?></p>
       <?php rockpack_render_newsletter(); ?>
       <?php if ( $socials ) : ?>
       <div class="footer-social">

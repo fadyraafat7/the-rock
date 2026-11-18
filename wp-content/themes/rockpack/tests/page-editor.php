@@ -52,7 +52,7 @@ try {
         'home' => array( 'Hero', 'Statistics', 'About', 'History', 'Certifications', 'Products and Services', 'Process Control and Inspection', 'Localization', 'Planet and Societal Impact', 'News', 'Partners', 'Careers', 'Closing call to action' ),
         'about-us' => array( 'Hero', 'Introduction', 'Technical foundation', 'Partnership', 'Regional growth', 'Closing call to action' ),
         'history' => array( 'Hero', 'History timeline' ),
-        'certifications' => array( 'Hero', 'Introduction and certifications', 'Production', 'Quality assurance', 'Partners', 'Closing statement' ),
+        'certifications' => array( 'Hero', 'Introduction and certifications', 'Production', 'Quality Assurance', 'Partners', 'Closing statement' ),
         'product-portfolio' => array( 'Hero', 'Product portfolio', 'Quality management', 'Process and materials', 'Process Control and Inspection', 'Localization' ),
         'planet' => array( 'Hero', 'Sustainable sourcing', 'Vision for Africa', 'Environmental, Social and Governance', 'Closing statement' ),
         'contact-us' => array( 'Hero', 'Contact details', 'Contact form', 'Map' ),

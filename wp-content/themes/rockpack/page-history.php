@@ -33,7 +33,7 @@ get_header();
 <main class="history-page company-page" id="main-content">
 	<?php get_template_part( 'template-parts/inner-navigation' ); ?>
 
-	<?php get_template_part( 'template-parts/inner-hero', null, array( 'title' => $hero_title, 'image' => $hero_image, 'parent' => $hero_eyebrow ) ); ?>
+	<?php get_template_part( 'template-parts/inner-hero', null, array( 'title' => $hero_title, 'image' => $hero_image, 'subtitle' => rp_option( 'history_hero_subtitle', rockpack_editor_defaults()['history_hero_subtitle'] ), 'parent' => $hero_eyebrow ) ); ?>
 
 	<section class="history-story" aria-labelledby="history-story-title">
 		<header class="history-story__header">
@@ -66,5 +66,4 @@ get_header();
 	</section>
 </main>
 
-<?php get_template_part( 'template-parts/footer-section' ); ?>
 <?php get_footer(); ?>

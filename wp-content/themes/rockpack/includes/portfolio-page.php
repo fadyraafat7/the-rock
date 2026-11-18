@@ -5,9 +5,9 @@ defined( 'ABSPATH' ) || exit;
 function rockpack_portfolio_page_fields() {
     $assets = get_template_directory_uri() . '/assets/images/products/';
     $definitions = array(
-        'title' => array( 'Hero title', 'text', 'Products & Services' ),
+        'title' => array( 'Hero title', 'text', 'Products' ),
         'hero_image' => array( 'Hero image URL', 'url', $assets . 'hero.jpg' ),
-        'heading' => array( 'Section heading', 'text', 'Products & Services' ),
+        'heading' => array( 'Section heading', 'text', 'Products' ),
         'gallery_heading' => array( 'Gallery heading', 'text', 'Product Portfolio' ),
         'gallery_intro' => array( 'Gallery introduction', 'textarea', 'Our role goes beyond production; we act as a performance ally, helping brands navigate complexity, accelerate launches and maintain consistent product quality across markets.' ),
         'quality_heading' => array( 'Quality heading', 'text', 'Quality Management' ),

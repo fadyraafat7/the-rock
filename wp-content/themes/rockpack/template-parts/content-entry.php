@@ -31,4 +31,4 @@ get_header();
         </article>
     <?php endwhile; ?>
 </main>
-<?php get_template_part('template-parts/footer-section'); get_footer(); ?>
+<?php get_footer(); ?>

@@ -6,6 +6,6 @@ get_header();
 ?>
 <main class="home-page company-page" id="main-content">
 	<?php get_template_part( 'template-parts/inner-navigation' ); ?>
-	<?php rockpack_render_home_sections(); ?>
+	<?php rockpack_render_home_sections( array_diff( array_keys( rockpack_home_sections() ), array( 'contact' ) ) ); ?>
 </main>
 <?php get_footer(); ?>

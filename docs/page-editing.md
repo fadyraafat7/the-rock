@@ -39,12 +39,12 @@ Shared navigation labels, search presentation, brand image, footer contact detai
 | Page | Scalar content | Page-specific / reused repeaters |
 | --- | --- | --- |
 | Home | Hero eyebrow/description/CTA; introduction image/CTA; history and certification CTAs; product CTA; process intro; sustainability copy/CTA; news intro/image; careers copy/image/CTA; closing CTA | Hero images, statistics, introduction bullets/tabs, history slides, certifications, products, process cards, localization cards, sustainability features, partner logos. News and opportunities come from their native post editors. |
-| About Us | Hero image; introduction; images/descriptions; foundation body/background; partnership body/images; closing copy/CTA | Introduction bullets/tabs, foundation features/icons, partnership points/icons, growth cards/icons |
-| History | Hero eyebrow/image and introduction | History slides with title, body, image, icon and placement |
-| Certifications | Hero image; intro; production copy/images/descriptions; quality body; partner copy/image/description; closing statement | Shared certifications with icon images; quality steps |
-| Product Portfolio | Hero image; gallery intro; quality copy; materials intro/image/description; shared process intro | Product gallery/links, material steps, process cards, localization cards |
-| Planet | Hero image; sourcing and vision copy/images/descriptions; ESG intro; closing statement | ESG pillars with nested points |
-| Contact Us | Hero image; address/phone/email card labels and values; form introduction and CF7 selector; map/image description | Form fields, button, messages and recipient are managed in Contact Form 7 |
+| About Us | Hero image/subtitle; introduction; images/descriptions; foundation body/background; partnership body/images; closing copy/CTA | Introduction bullets/tabs, foundation features/icons, partnership points/icons, growth cards/icons |
+| History | Hero eyebrow/image/subtitle and introduction | History slides with title, body, image, icon and placement |
+| Certifications | Hero image/subtitle; intro; production copy/images/descriptions; quality body; partner copy/image/description; closing statement | Shared certifications with icon images; quality steps |
+| Product Portfolio | Hero image/subtitle; gallery intro; quality copy; materials intro/image/description; shared process intro | Product gallery/links, material steps, process cards, localization cards |
+| Planet | Hero image/subtitle; sourcing and vision copy/images/descriptions; ESG intro; closing statement | ESG pillars with nested points |
+| Contact Us | Hero image/subtitle; address/phone/email card labels and values; form introduction and CF7 selector; map/image description | Form fields, button, messages and recipient are managed in Contact Form 7 |
 
 There are **23 top-level repeater definitions**, with nested ESG points and navigation links. Repeaters expose relevant text, title, image, icon, statistic, link, placement or appearance controls. The interface provides accessible move buttons instead of requiring drag-and-drop. News now comes from published Posts, and Careers from published open `rp_job` entries. The Home components link directly to those editors; fallback news controls and the old generic Careers destination field are retired. See [News and Careers](../README.md#news-and-careers) for editing and routing details.
 

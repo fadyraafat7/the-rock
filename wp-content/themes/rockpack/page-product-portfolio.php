@@ -22,7 +22,7 @@ get_header();
     <section class="portfolio-quality" id="quality-management" aria-labelledby="portfolio-quality-title">
         <h2 id="portfolio-quality-title"><?php echo esc_html( $content['quality_heading'] ); ?></h2>
         <div><p><?php echo esc_html( $content['quality_intro'] ); ?></p><p><?php echo esc_html( $content['quality_text'] ); ?></p></div>
-        <?php get_template_part( 'template-parts/angle-accent' ); ?>
+        <?php get_template_part( 'template-parts/angle-accent', null, array( 'align_right' => true ) ); ?>
     </section>
 
     <section class="portfolio-materials" aria-labelledby="portfolio-materials-title">
@@ -39,5 +39,4 @@ get_header();
     <?php get_template_part( 'template-parts/process' ); ?>
     <?php get_template_part( 'template-parts/local' ); ?>
 </main>
-<?php get_template_part( 'template-parts/footer-section' ); ?>
 <?php get_footer(); ?>

@@ -203,10 +203,10 @@ function rockpack_scripts() {
     $planet_page = is_page( 'planet' ) || is_page_template( 'page-planet.php' );
     $contact_page = is_page( 'contact-us' ) || is_page_template( 'page-contact-us.php' );
     $company_page = is_page( array( 'about-us', 'history', 'certifications' ) ) || is_page_template( array( 'page-about-us.php', 'page-history.php', 'page-certifications.php' ) ) || $portfolio_page || $planet_page || $contact_page;
+    $shared_css = '/assets/css/company-page.css';
+    wp_enqueue_style( 'rockpack-company-page', get_template_directory_uri() . $shared_css, [ 'rockpack-style' ], (string) filemtime( get_template_directory() . $shared_css ) );
     if ( $company_page || is_front_page() || is_404() || is_search() || rockpack_content_page() ) {
-        $shared_css = '/assets/css/company-page.css';
         $shared_js = '/assets/js/inner-page.js';
-        wp_enqueue_style( 'rockpack-company-page', get_template_directory_uri() . $shared_css, [ 'rockpack-style' ], (string) filemtime( get_template_directory() . $shared_css ) );
         wp_enqueue_script( 'rockpack-inner-page', get_template_directory_uri() . $shared_js, [], (string) filemtime( get_template_directory() . $shared_js ), true );
         $motion_js = '/assets/js/motion.js';
         wp_enqueue_script( 'rockpack-motion', get_template_directory_uri() . $motion_js, [], (string) filemtime( get_template_directory() . $motion_js ), true );
@@ -247,7 +247,7 @@ function rockpack_scripts() {
         wp_enqueue_style( 'rockpack-portfolio-page', get_template_directory_uri() . $css, [ 'rockpack-product-components' ], (string) filemtime( get_template_directory() . $css ) );
     }
 
-    if ( $contact_page ) {
+    if ( $contact_page || is_post_type_archive( 'rp_job' ) ) {
         $css = '/assets/css/contact-page.css';
         wp_enqueue_style( 'rockpack-contact-page', get_template_directory_uri() . $css, [ 'rockpack-company-page' ], (string) filemtime( get_template_directory() . $css ) );
     }
@@ -279,6 +279,13 @@ function rockpack_scripts() {
     if ( is_page( 'certifications' ) || is_page_template( 'page-certifications.php' ) ) {
         $css = '/assets/css/certifications.css';
         wp_enqueue_style( 'rockpack-certifications', get_template_directory_uri() . $css, [ 'rockpack-company-page' ], (string) filemtime( get_template_directory() . $css ) );
+    }
+
+    // The shared type roles load after every page stylesheet so they apply consistently.
+    if ( wp_style_is( 'rockpack-company-page', 'enqueued' ) ) {
+        $css = '/assets/css/typography.css';
+        $page_styles = array_values( array_filter( wp_styles()->queue, static fn( $handle ) => str_starts_with( $handle, 'rockpack-' ) ) );
+        wp_enqueue_style( 'rockpack-typography', get_template_directory_uri() . $css, $page_styles, (string) filemtime( get_template_directory() . $css ) );
     }
 }
 add_action( 'wp_enqueue_scripts', 'rockpack_scripts' );
@@ -314,15 +321,9 @@ add_action( 'wp_ajax_rockpack_search_preview', 'rockpack_search_preview' );
 add_action( 'wp_ajax_nopriv_rockpack_search_preview', 'rockpack_search_preview' );
 
 add_filter( 'body_class', function ( $classes ) {
-    if ( is_404() || is_search() || rockpack_content_page() ) {
-        $classes[] = 'rockpack-company-page';
-    }
+    $classes[] = 'rockpack-company-page';
     if ( is_front_page() ) {
         $classes[] = 'rockpack-home-page';
-        $classes[] = 'rockpack-company-page';
-    }
-    if ( is_page( array( 'about-us', 'history', 'certifications', 'product-portfolio', 'planet', 'contact-us' ) ) || is_page_template( array( 'page-about-us.php', 'page-history.php', 'page-certifications.php', 'page-product-portfolio.php', 'page-planet.php', 'page-contact-us.php' ) ) ) {
-        $classes[] = 'rockpack-company-page';
     }
     if ( is_page( 'contact-us' ) || is_page_template( 'page-contact-us.php' ) ) {
         $classes[] = 'rockpack-contact-page';
@@ -495,7 +496,14 @@ function rp_sanitize_settings( $input ) {
             if ( ! array_key_exists( $f['key'], $input ) || ! is_scalar( $input[$f['key']] ) ) continue;
             $val = $input[ $f['key'] ] ?? '';
             if ( !isset($input['_media']) && isset($out['_media'][$f['key']]) && $val !== ($out[$f['key']]??'') ) unset($out['_media'][$f['key']]);
-            if ( 'textarea' === $f['type'] ) {
+            if ( 'contact_page_map_url' === $f['key'] ) {
+                $map_url = rockpack_sanitize_contact_map_url( $val );
+                if ( is_wp_error( $map_url ) ) {
+                    add_settings_error( 'rockpack_settings', 'map_url', $map_url->get_error_message() );
+                } else {
+                    $out[ $f['key'] ] = $map_url;
+                }
+            } elseif ( 'textarea' === $f['type'] ) {
                 $out[ $f['key'] ] = sanitize_textarea_field( $val );
             } elseif ( 'email' === $f['type'] ) {
                 $out[ $f['key'] ] = sanitize_email( $val );

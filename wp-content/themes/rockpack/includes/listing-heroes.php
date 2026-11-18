@@ -5,6 +5,9 @@ defined( 'ABSPATH' ) || exit;
 function rockpack_listing_hero( $kind ) {
     $kind = 'careers' === $kind ? 'careers' : 'news';
     return array(
+        'parent' => __( 'Company', 'rockpack' ),
+        'parent_url' => home_url( '/' ),
+        'show_lines' => true,
         'title' => rp_option( $kind . '_listing_hero_title', rp_option( $kind . '_heading', ucfirst( $kind ) ) ),
         'image' => rp_option( $kind . '_listing_hero_image', get_template_directory_uri() . '/assets/images/history/hero.jpg' ),
     );
@@ -33,7 +36,7 @@ function rockpack_listing_heroes_admin() {
             <?php foreach ( array( 'news' => 'News', 'careers' => 'Careers' ) as $kind => $label ) :
                 $hero = rockpack_listing_hero( $kind );
                 ob_start();
-                get_template_part( 'template-parts/inner-hero', null, array( 'title' => $hero['title'], 'image' => $hero['image'], 'parent' => 'Home', 'parent_url' => home_url( '/' ), 'show_lines' => true ) );
+                get_template_part( 'template-parts/inner-hero', null, $hero );
                 $markup = ob_get_clean();
                 $document = '<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"><link rel="stylesheet" href="' . esc_url( get_template_directory_uri() . '/assets/css/company-page.css' ) . '"><style>html,body{margin:0}body{font-family:Inter,Arial,sans-serif;--company-page-width:100%}a{pointer-events:none}</style></head><body>' . $markup . '</body></html>';
             ?>

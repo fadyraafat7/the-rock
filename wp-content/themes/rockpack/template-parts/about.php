@@ -24,15 +24,19 @@ $image   = rp_option( 'about_image', get_template_directory_uri() . '/assets/ima
         <img src="<?php echo esc_url(rp_webp_image_url(  get_template_directory_uri() . '/assets/images/certifications/logo.png'  )); ?>" alt="" width="24" height="27" loading="lazy">
         <?php echo esc_html( $eyebrow ); ?>
       </div>
-      <h2 class="sec-title" id="home-about-title"><?php echo wp_kses( $heading, [ 'em' => [] ] ); ?></h2>
-      <ul class="about-bullets"><?php foreach(rockpack_collection('home_bullets') as $bullet) : ?><li><?php echo esc_html($bullet['text']); ?></li><?php endforeach; ?></ul>
+      <h2 class="sec-title" id="home-about-title"><?php echo wp_kses( preg_replace( '/\b(growth|quality|trust)\b/i', '<strong>$1</strong>', $heading ), [ 'em' => [], 'strong' => [] ] ); ?></h2>
+      <div class="about-paragraphs">
+        <?php foreach ( rockpack_collection( 'home_bullets' ) as $bullet ) : ?>
+          <p><?php echo esc_html( $bullet['text'] ); ?></p>
+        <?php endforeach; ?>
+      </div>
       <div data-about-tabs>
         <div class="rp-tabs" role="tablist" aria-label="Our capabilities">
         <?php $tabs=rockpack_collection('home_tabs'); foreach($tabs as $i=>$tab) : ?>
         <button class="rp-tab" type="button" role="tab" id="home-tab-<?php echo (int)$i; ?>" aria-controls="home-panel-<?php echo (int)$i; ?>" aria-selected="<?php echo $i?'false':'true'; ?>" tabindex="<?php echo $i?-1:0; ?>"><?php echo esc_html($tab['title']); ?></button>
         <?php endforeach; ?></div>
-        <?php foreach($tabs as $i=>$tab) : $operations_copy = 'Our operations are designed around one core principle: Reliability at scale.' === trim( $tab['text'] ); ?>
-        <div class="rp-tab-body<?php echo $operations_copy ? ' rp-tab-body--operations' : ''; ?>" id="home-panel-<?php echo (int)$i; ?>" role="tabpanel" aria-labelledby="home-tab-<?php echo (int)$i; ?>" tabindex="0" <?php if($i) echo 'hidden'; ?>><?php if ( $operations_copy ) : ?><span>Our operations are designed around</span> <span>one core principle: Reliability at scale.</span><?php else : ?><?php echo esc_html($tab['text']); ?><?php endif; ?></div>
+        <?php foreach($tabs as $i=>$tab) : $operations_copy = 0 === strcasecmp( trim( $tab['text'] ), 'Our operations are designed around one core principle: reliability at scale.' ); ?>
+        <div class="rp-tab-body<?php echo $operations_copy ? ' rp-tab-body--operations' : ''; ?>" id="home-panel-<?php echo (int)$i; ?>" role="tabpanel" aria-labelledby="home-tab-<?php echo (int)$i; ?>" tabindex="0" <?php if($i) echo 'hidden'; ?>><?php if ( $operations_copy ) : ?><span>Our operations are designed around</span> <span>one core principle: reliability at scale.</span><?php else : ?><?php echo esc_html($tab['text']); ?><?php endif; ?></div>
         <?php endforeach; ?>
       </div>
       <?php if ( ($btn_url) && ($btn_text) ) : ?><a href="<?php echo esc_url( $btn_url ); ?>" class="btn-prim"><?php echo esc_html( $btn_text ); ?> &nbsp;→</a><?php endif; ?>

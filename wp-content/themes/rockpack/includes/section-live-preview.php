@@ -7,7 +7,7 @@ function rockpack_preview_sections() {
         'home' => array('Hero'=>'rp-hero','Statistics'=>'rp-stats','About'=>'rp-about','History'=>'rp-history','Certifications'=>'rp-certs','Products and Services'=>'rp-products','Process Control and Inspection'=>'rp-process','Localization'=>'rp-local','Planet and Societal Impact'=>'rp-planet','News'=>'rp-news','Partners'=>'rp-logos','Careers'=>'rp-careers','Closing call to action'=>'rp-cta'),
         'about-us' => array('Hero'=>'rp-inner-hero','Introduction'=>'about-intro','Technical foundation'=>'about-foundation','Partnership'=>'about-partnership','Regional growth'=>'about-growth','Closing call to action'=>'about-closing'),
         'history' => array('Hero'=>'rp-inner-hero','History timeline'=>'history-story'),
-        'certifications' => array('Hero'=>'rp-inner-hero','Introduction and certifications'=>'certifications-intro','Production'=>'certifications-production','Quality assurance'=>'certifications-quality','Partners'=>'certifications-partners','Closing statement'=>'certifications-commitment'),
+        'certifications' => array('Hero'=>'rp-inner-hero','Introduction and certifications'=>'certifications-intro','Production'=>'certifications-production','Quality Assurance'=>'certifications-quality','Partners'=>'certifications-partners','Closing statement'=>'certifications-commitment'),
         'product-portfolio' => array('Hero'=>'rp-inner-hero','Product portfolio'=>'portfolio-intro','Quality management'=>'portfolio-quality','Process and materials'=>'portfolio-materials','Process Control and Inspection'=>'rp-process','Localization'=>'rp-local'),
         'planet' => array('Hero'=>'rp-inner-hero','Sustainable sourcing'=>'planet-sourcing','Vision for Africa'=>'planet-vision','Environmental, Social and Governance'=>'planet-esg','Closing statement'=>'planet-statement'),
         'contact-us' => array('Hero'=>'rp-inner-hero','Contact details'=>'contact-details','Contact form'=>'contact-enquiry','Map'=>'contact-map'),
@@ -77,6 +77,7 @@ function rockpack_render_section_preview() {
     $styles = array('style.css','assets/css/company-page.css');
     $page_styles = array('home'=>array('home.css','product-components.css'),'about-us'=>array('about-page.css'),'history'=>array('history.css'),'certifications'=>array('certifications.css'),'product-portfolio'=>array('product-components.css','portfolio-page.css'),'planet'=>array('planet-page.css'),'contact-us'=>array('contact-page.css'));
     foreach ($page_styles[$kind] ?? array() as $css) $styles[] = 'assets/css/'.$css;
+    $styles[] = 'assets/css/typography.css';
     $document = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">';
     foreach ($styles as $style) $document .= '<link rel="stylesheet" href="'.esc_url(get_template_directory_uri().'/'.$style).'">';
     $document .= '<style>html,body{margin:0} body{overflow:auto} a,button,input,select,textarea{pointer-events:none}</style></head><body class="'.esc_attr('home' === $kind ? 'rockpack-home-page' : 'rockpack-company-page').'">';

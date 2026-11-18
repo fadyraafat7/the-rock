@@ -19,7 +19,7 @@ function rockpack_planet_page_fields() {
         'environmental_title' => array( 'Environmental title', 'text', 'Environmental' ),
         'environmental_1' => array( 'Environmental - first point', 'textarea', 'Manufacturing process with close-to-zero waste of material, ensuring highest possible efficiency and maintaining sustainability' ),
         'environmental_2' => array( 'Environmental - second point', 'textarea', 'Committed to sustainable sourcing of materials, including FSC-approved paperboard' ),
-        'environmental_3' => array( 'Environmental - third point', 'textarea', 'Flexibility and precision' ),
+        'environmental_3' => array( 'Environmental - third point', 'textarea', 'Optimizing resource use across every stage of production' ),
         'social_title' => array( 'Social title', 'text', 'Social' ),
         'social_1' => array( 'Social - first point', 'textarea', 'Investing in people, skills and safe working environments' ),
         'social_2' => array( 'Social - second point', 'textarea', 'Supporting regional development and job creation' ),

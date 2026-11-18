@@ -23,7 +23,7 @@ function rockpack_editor_layout( $kind ) {
             'Closing call to action' => $group( array( 'cta_desc', 'cta_btn_text', 'cta_btn_url' ) ),
         ),
         'about-us' => array(
-            'Hero' => $group( array( 'about_page_hero_image', 'breadcrumb_parent' ) ),
+            'Hero' => $group( array( 'about_page_hero_image', 'about_page_hero_subtitle', 'breadcrumb_parent' ) ),
             'Introduction' => $group( array( 'about_page_image', 'about_us_image_description_62', 'about_page_eyebrow', 'about_page_button_text', 'about_page_button_url' ), array( 'about_bullets', 'about_tabs' ) ),
             'Technical foundation' => $group( array( 'about_page_foundation_image', 'about_page_foundation_text' ), array( 'foundation_features' ) ),
             'Partnership' => $group( array( 'about_page_partnership_text', 'about_page_partnership_image', 'about_us_image_description_63', 'about_page_collaboration_image', 'about_us_image_description_64' ), array( 'partnership_points' ) ),
@@ -31,14 +31,14 @@ function rockpack_editor_layout( $kind ) {
             'Closing call to action' => $group( array( 'about_page_closing_text', 'about_page_closing_button_text', 'about_page_closing_button_url' ) ),
         ),
         'history' => array(
-            'Hero' => $group( array( 'history_hero_image', 'history_hero_eyebrow' ) ),
+            'Hero' => $group( array( 'history_hero_image', 'history_hero_subtitle', 'history_hero_eyebrow' ) ),
             'History timeline' => $group( array( 'history_page_intro' ), array( 'history' ) ),
         ),
         'certifications' => array(
-            'Hero' => $group( array( 'certs_page_hero_image', 'breadcrumb_parent' ) ),
+            'Hero' => $group( array( 'certs_page_hero_image', 'certs_page_hero_subtitle', 'breadcrumb_parent' ) ),
             'Introduction and certifications' => $group( array( 'certs_page_intro' ), array( 'certs' ) ),
             'Production' => $group( array( 'certs_page_production_image', 'certifications_image_description_65', 'certs_page_packaging_image', 'certifications_image_description_66', 'certs_page_production_intro', 'certs_page_production_result' ) ),
-            'Quality assurance' => $group( array( 'certs_page_quality_text' ), array( 'quality_steps' ) ),
+            'Quality Assurance' => $group( array( 'certs_page_quality_text' ), array( 'quality_steps' ) ),
             'Partners' => $group( array( 'certs_page_partners_intro', 'certs_page_partners_text', 'certs_page_partners_image', 'certifications_image_description_67' ) ),
             'Closing statement' => $group( array( 'certs_page_commitment_text' ) ),
         ),
@@ -61,7 +61,7 @@ function rockpack_editor_layout( $kind ) {
             'Hero' => $group( array( 'contact_page_hero_image' ) ),
             'Contact details' => $group( array( 'contact_page_address_title', 'contact_page_address', 'contact_page_phone_title', 'contact_page_phone_hint', 'contact_page_phone', 'contact_page_email_title', 'contact_page_email', 'contact_page_email_2' ) ),
             'Contact form' => $group( array( 'contact_page_form_eyebrow', 'contact_page_form_text', 'contact_page_form_id' ) ),
-            'Map' => $group( array( 'contact_page_map_image', 'contact_page_map_alt' ) ),
+            'Map' => $group( array( 'contact_page_map_url' ) ),
         ),
     );
     return $layouts[ $kind ] ?? array();

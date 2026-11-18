@@ -34,7 +34,7 @@ For a fresh installation or migration, provision a compatible WordPress database
 | About Us | `/about-us/` | `page-about-us.php` |
 | History | `/history/` | `page-history.php` |
 | Certifications | `/certifications/` | `page-certifications.php` |
-| Products & Services | `/product-portfolio/` | `page-product-portfolio.php` |
+| Products | `/product-portfolio/` | `page-product-portfolio.php` |
 | Planet & Societal Impact | `/planet/` | `page-planet.php` |
 | Contact Us | `/contact-us/` | `page-contact-us.php` |
 | Page not found | Any missing URL | `404.php` |
@@ -46,7 +46,11 @@ For a fresh installation or migration, provision a compatible WordPress database
 
 The shared navigation and 404 search forms open the search results template. It includes a query field, result counts, linked titles, available excerpts, pagination, and empty/no-match states. Search uses WordPress's built-in public content search; content stored only in Rockpack settings or private section custom post types is not indexed.
 
-Administrators can edit the News and Careers archive hero titles and images under **Pages > News & Careers Heroes**. Each hero has a live preview; choose images from the Media Library or enter an image URL, then select **Save heroes** to publish the changes.
+Administrators can edit the News and Careers archive hero titles and images under **Pages > News & Careers Heroes**. Each hero has a live preview. Choose an image from the Media Library or enter its URL, then select **Save heroes** to publish the changes. The Company breadcrumb appears directly below each title.
+
+Every inner-page hero can show an optional subtitle under its title, edited in each page's **Hero** component; leave it blank to hide it. Hero banners have square corners, and every page uses the Home footer presentation.
+
+The Inter size tokens live in `assets/css/company-page.css`. The role mappings in `assets/css/typography.css` load after the page stylesheets. Desktop titles, including all Home banner slides, use 48px semibold, subtitles use 36px medium, green labels use 20px regular uppercase, body copy uses 18px regular or bold, and buttons use 18px medium. Text scales down below 800px except for button labels.
 
 The header search icon expands an inline search field to its left without shifting the menu or header buttons. Enter or the search icon submits the query; Escape, moving focus away, or clicking elsewhere collapses the field.
 
@@ -154,7 +158,7 @@ The local installation uses the **Rockpack Local Page Cache** plugin, a delibera
 - `HIT` means the early drop-in served that entry before WordPress loaded.
 - `BYPASS` means the request remained dynamic.
 
-Home, About Us, History, Certifications, Products & Services, and Planet are cacheable for anonymous `GET`/`HEAD` requests without cookies, authorization, or query strings. A post/page save, menu update, Rockpack setting change, theme change, or static-snapshot change clears the local page cache. Each response captures a cache generation at its start, and a flush advances that generation under a file lock; an older in-flight response therefore cannot repopulate the cache after invalidation. The cache deliberately bypasses all logged-in, cookie-bearing, authorized, query-string, admin, REST, XML-RPC, static-generator render, and Contact Us requests. Contact Us additionally keeps its existing `no-store, private` response because its form contains a nonce.
+Home, About Us, History, Certifications, Products, and Planet are cacheable for anonymous `GET`/`HEAD` requests without cookies, authorization, or query strings. A post/page save, menu update, Rockpack setting change, theme change, or static-snapshot change clears the local page cache. Each response captures a cache generation at its start, and a flush advances that generation under a file lock; an older in-flight response therefore cannot repopulate the cache after invalidation. The cache deliberately bypasses all logged-in, cookie-bearing, authorized, query-string, admin, REST, XML-RPC, static-generator render, and Contact Us requests. Contact Us additionally keeps its existing `no-store, private` response because its form contains a nonce.
 
 This is independent of the Rockpack Static Site Generator. Snapshots may exist under `wp-content/static-site/`, but the current root `.htaccess` has no static-serving rewrites, so normal public URLs are still served by WordPress (and, where eligible, this local page cache). No Redis object cache is installed or required; no Redis service is configured locally.
 

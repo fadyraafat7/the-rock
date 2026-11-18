@@ -13,6 +13,7 @@ get_header();
     <?php get_template_part( 'template-parts/inner-hero', null, array(
         'title' => __( 'Search', 'rockpack' ),
         'image' => get_template_directory_uri() . '/assets/images/history/hero.jpg',
+        'subtitle' => __( 'Find pages, news and career opportunities across The Rock Pack', 'rockpack' ),
         'parent' => __( 'Home', 'rockpack' ),
         'parent_url' => home_url( '/' ),
     ) ); ?>
@@ -71,5 +72,4 @@ get_header();
         <?php endif; ?>
     </section>
 </main>
-<?php get_template_part( 'template-parts/footer-section' ); ?>
 <?php get_footer(); ?>

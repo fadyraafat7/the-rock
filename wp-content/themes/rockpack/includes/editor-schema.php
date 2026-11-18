@@ -50,7 +50,7 @@ function rockpack_repeaters() {
         'foundation_features' => array('label'=>'Technical foundation features','pages'=>array('about-us'),'fields'=>$icons),
         'partnership_points' => array('label'=>'Partnership points','pages'=>array('about-us'),'fields'=>$icons),
         'growth_cards' => array('label'=>'Regional growth cards','pages'=>array('about-us'),'fields'=>$icons),
-        'quality_steps' => array('label'=>'Quality assurance steps','pages'=>array('certifications'),'fields'=>$text),
+        'quality_steps' => array('label'=>'Quality Assurance steps','pages'=>array('certifications'),'fields'=>$text),
         'material_steps' => array('label'=>'Process and materials steps','pages'=>array('product-portfolio'),'fields'=>rockpack_item_fields(array('title'=>array('Title'),'text'=>array('Description','textarea')))),
         'process_cards' => array('label'=>'Process cards (shared with Home and Portfolio)','pages'=>array('home','product-portfolio'),'fields'=>rockpack_item_fields(array('title'=>array('Title'),'text'=>array('Description','textarea'),'image'=>array('Image','image'),'number'=>array('Statistic'),'unit'=>array('Statistic label'),'style'=>array('Card appearance','select',array('white'=>'White / image','green'=>'Green / statistic'))))),
         'local_cards' => array('label'=>'Localization cards (shared with Home and Portfolio)','pages'=>array('home','product-portfolio'),'fields'=>rockpack_item_fields(array('title'=>array('Title'),'text'=>array('Description','textarea'),'image'=>array('Image','image'),'style'=>array('Card appearance','select',array('dark'=>'Dark','light'=>'Light'))))),
@@ -89,7 +89,7 @@ function rockpack_repeater_defaults( $key ) {
             }
             break;
         case 'footer_page_links': case 'footer_service_links':
-            $links='footer_page_links'===$key?array('Home'=>'/','Company'=>'/about-us/','About Us'=>'/about-us/','History'=>'/history/','Certifications'=>'/certifications/','News'=>'/news/','Careers'=>'/careers/'):array('Products & Services'=>'/product-portfolio/','Planet & Societal Impact'=>'/planet/','Contact Us'=>'/contact-us/');
+            $links='footer_page_links'===$key?array('Home'=>'/','Company'=>'/about-us/','About Us'=>'/about-us/','History'=>'/history/','Certifications'=>'/certifications/','News'=>'/news/','Careers'=>'/careers/'):array('Products'=>'/product-portfolio/','Planet & Societal Impact'=>'/planet/','Contact Us'=>'/contact-us/');
             foreach($links as $label=>$path) { $legacy='shared_link_'.trim(preg_replace('/[^a-z0-9]+/','_',strtolower($path)),'_'); if('shared_link_'===$legacy) $legacy='shared_link_home'; $label_key='footer_label_'.trim(preg_replace('/[^a-z0-9]+/','_',strtolower($label)),'_'); $items[]=array('title'=>rp_option($label_key,$label),'url'=>rp_option($legacy,home_url($path))); }
             break;
         case 'hero_images':
@@ -122,7 +122,7 @@ function rockpack_repeater_defaults( $key ) {
         case 'history':
             foreach(rp_default_slides() as $row) { $row['scope']='home'; $items[]=$row; }
             $titles=array('Building Expertise','Mastering Production','Advancing Aseptic Technology');
-            $texts=array('Our journey began with a strong specialization in color management, high precision printing and packaging production, where consistency and attention to detail were essential.','Over the years, this expertise evolved alongside the shifting needs of the food and beverage industry, where safety, shelf life and scalability became critical success factors.','Recognizing the growing demand for aseptic solutions, The Rock Pack expanded its capabilities to integrate advanced aseptic technology into its production ecosystem. This transition marked a strategic shift from traditional packaging execution to delivering high performance, sterile packaging solutions that meet international food safety standards.');
+            $texts=array('Our journey began with a strong specialization in color management, high precision printing and packaging production, where consistency and attention to detail were essential.','Over the years, this expertise evolved alongside the shifting needs of the food and beverage industry, where safety, shelf life and scalability became critical success factors.','Recognizing the growing demand for aseptic solutions, The Rock Pack expanded its capabilities to integrate advanced aseptic technology into its production ecosystem. This transition marked a strategic shift from traditional packaging execution to delivering high performance, aseptic packaging solutions that meet international food safety standards.');
             foreach(array('building-expertise','mastering-production','aseptic-technology') as $i=>$image) $items[]=array('title'=>$titles[$i],'text'=>$texts[$i],'scope'=>'history','image'=>rp_option('history_milestone_image_'.($i+1),$asset.'history/'.$image.'.jpg'),'icon_image'=>$asset.'history/'.array('expertise','production','technology')[$i].'-icon.png');
             break;
         case 'certs': foreach(rp_default_certs() as $name) $items[]=array('title'=>$name,'image'=>$asset.'certifications/certificate-medal.png'); break;

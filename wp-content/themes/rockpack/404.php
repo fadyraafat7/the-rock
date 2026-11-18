@@ -24,5 +24,4 @@ get_header();
         </form>
     </section>
 </main>
-<?php get_template_part( 'template-parts/footer-section' ); ?>
 <?php get_footer(); ?>

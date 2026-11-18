@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 function rockpack_register_jobs() {
     register_post_type( 'rp_job', array(
         'labels' => array( 'name' => 'Careers', 'singular_name' => 'Job opportunity', 'add_new_item' => 'Add job opportunity', 'edit_item' => 'Edit job opportunity', 'all_items' => 'All opportunities' ),
-        'public' => true, 'show_in_rest' => true, 'menu_icon' => 'dashicons-businessperson',
+        'public' => true, 'exclude_from_search' => true, 'show_in_rest' => true, 'menu_icon' => 'dashicons-businessperson',
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
         'has_archive' => 'careers', 'rewrite' => array( 'slug' => 'careers', 'with_front' => false ),
     ) );
@@ -20,6 +20,13 @@ function rockpack_news_url() {
 function rockpack_careers_url() {
     return get_post_type_archive_link( 'rp_job' ) ?: home_url( '/careers/' );
 }
+
+add_action( 'template_redirect', static function () {
+    if ( is_singular( 'rp_job' ) || ( is_post_type_archive( 'rp_job' ) && is_paged() ) ) {
+        wp_safe_redirect( rockpack_careers_url() );
+        exit;
+    }
+}, 1 );
 
 /** Translate the News URL's ?page=n before WordPress parses its reserved page variable. */
 function rockpack_news_pagination_request( $vars ) {

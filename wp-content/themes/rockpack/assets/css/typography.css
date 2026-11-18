@@ -1,0 +1,126 @@
+/*
+ * Site-wide type roles (Inter). Loaded after every page stylesheet so these
+ * roles win over earlier per-page sizes. Sizes come from the tokens in
+ * company-page.css; change a token there to retune a role everywhere.
+ *
+ *   Title          48 / semibold
+ *   Subtitle       36 / medium
+ *   Green titles   20 / regular, all caps
+ *   Body text      18 / regular (bold for emphasis)
+ *   Buttons        18 / medium
+ *
+ * Card headings, statistics and the 404 code are
+ * intentionally outside these roles.
+ */
+
+/* Title */
+.home-page .rp-hero .rp-hero-title,
+.company-page .rp-inner-hero h1,
+.home-page h2,
+.company-page .careers-hdr h2,
+.company-page .rp-cta h2,
+.company-page .about-foundation h2,
+.company-page .about-partnership h2,
+.company-page .about-closing h2,
+.company-page .history-story h2,
+.company-page .certifications-intro h2,
+.company-page .certifications-quality h2,
+.company-page .certifications-commitment h2,
+.company-page .portfolio-intro > h2,
+.company-page .portfolio-quality h2,
+.company-page .planet-esg__header h2,
+.company-page .planet-statement h2,
+.company-page .contact-details > h2,
+.company-page .contact-enquiry__copy h2,
+.company-page .rp-not-found h1,
+.company-page .rp-entry__header h1 { font-size: var(--rp-font-title); font-weight: 600; }
+
+/* Subtitle (also used for the large closing statements) */
+.company-page .rp-about h2,
+.company-page .about-intro h2,
+.company-page .history-slide-title,
+.company-page .history-slide-text,
+.company-page .prod-header h3,
+.company-page .process-hdr h2,
+.company-page .careers-card h3,
+.company-page .portfolio-intro__header h3,
+.company-page .portfolio-materials h2,
+.company-page .planet-sourcing h2,
+.company-page .planet-vision h2,
+.company-page .planet-esg__pillars h3,
+.company-page .rp-search-results h2 { font-size: var(--rp-font-subtitle); font-weight: 500; }
+
+/* Green titles: eyebrows, section labels and card labels */
+.company-page .rp-about .eyebrow,
+.company-page .about-intro__eyebrow,
+.company-page .planet-subtitle,
+.company-page .rp-news .sub,
+.company-page .careers-hdr p,
+.company-page .process-hdr p,
+.company-page .history-story__intro p,
+.company-page .contact-enquiry__eyebrow,
+.company-page .rp-not-found__eyebrow,
+.company-page .proc-label,
+.company-page .proc-green .sub,
+.company-page .local-dark .lbl,
+.company-page .local-light .lbl,
+.company-page .certifications-quality__steps li { font-size: var(--rp-font-label); font-weight: 400; line-height: 1.3; text-transform: uppercase; }
+
+/* Body text */
+.company-page .rp-hero-desc,
+.company-page .about-paragraphs,
+.company-page .rp-tab-body,
+.company-page .planet-item p,
+.company-page .news-intro,
+.company-page .careers-card p,
+.company-page .proc-text,
+.company-page .proc-green p,
+.company-page .local-dark p,
+.company-page .local-light p,
+.company-page .about-intro__paragraphs,
+.company-page .about-tabs__panel,
+.company-page .certifications-intro > p,
+.company-page .certifications-production__copy,
+.company-page .certifications-quality__header p,
+.company-page .certifications-partners__copy p,
+.company-page .portfolio-materials__copy > p,
+.company-page .portfolio-materials__steps p,
+.company-page .planet-page__copy p,
+.company-page .planet-esg__header p,
+.company-page .planet-esg__pillars ul,
+.company-page .contact-details__card p,
+.company-page .contact-enquiry__copy > p:not(.contact-enquiry__eyebrow),
+.company-page .contact-enquiry__fields input,
+.company-page .contact-enquiry__fields textarea,
+.company-page .rp-content-card p:not(.rp-content-meta),
+.company-page .rp-content-empty p,
+.company-page .rp-entry__body,
+.company-page .rp-search-result__excerpt,
+.company-page .rp-search-results__empty p,
+.company-page .rp-not-found__text { font-size: var(--rp-font-body); font-weight: 400; }
+
+/* Body text, bold */
+.company-page .stat-lbl,
+.company-page .rp-tab,
+.company-page .certifications-partners__copy p:first-child { font-size: var(--rp-font-body); font-weight: 700; }
+
+/* Buttons: one pill size everywhere */
+.company-page .btn-prim,
+.company-page .btn-outline-g,
+.company-page .btn-outline-w,
+.company-page .about-button,
+.company-page .rp-inner-nav__cta,
+.company-page .rp-inner-nav__mobile-cta,
+.company-page .contact-enquiry__form .wpcf7-submit,
+.company-page .rp-content-button,
+.company-page .rp-not-found__home { min-height: var(--rp-button-height); padding: 0 var(--rp-button-padding-x); font-size: var(--rp-font-button); font-weight: 500; line-height: 1.2; }
+
+/* Buttons: text links, header and form buttons keep their own shape */
+.company-page .link-arr,
+.company-page .rp-content-link,
+.company-page .rp-search-results__empty a,
+.company-page .rp-search-form button,
+.company-page .rp-not-found__search button,
+.rockpack-company-page .rp-footer .nl-form button,
+.rockpack-company-page .rp-footer .nl-form input[type="submit"],
+.rockpack-company-page .rp-footer .footer-contact-link { font-size: var(--rp-font-button); font-weight: 500; }

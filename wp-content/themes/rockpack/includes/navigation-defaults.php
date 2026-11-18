@@ -15,7 +15,7 @@ return array(
 		array( 'label' => rp_option('nav_label_quality_management','Quality Management'), 'slug' => 'quality-management', 'fallback' => '/#process', 'anchor_page' => 'product-portfolio', 'anchor' => 'quality-management' ),
 	) ),
 	'planet' => array( 'label' => rp_option('nav_label_planet','Planet'), 'items' => array(
-		array( 'label' => rp_option('nav_label_sustainable_sourcing','Sustainable Sourcing'), 'slug' => 'sustainable-sourcing', 'fallback' => '/#sustainable-sourcing', 'anchor_page' => 'planet', 'anchor' => 'sustainable-sourcing' ),
+		array( 'label' => rp_option('nav_label_sustainable_sourcing','Sustainable Sourcing'), 'slug' => 'sustainable-sourcing', 'fallback' => '/planet/' ),
 		array( 'label' => rp_option('nav_label_vision_for_africa','Vision for Africa'), 'slug' => 'vision-for-africa', 'fallback' => '/#vision-for-africa', 'anchor_page' => 'planet', 'anchor' => 'vision-for-africa' ),
 		array( 'label' => rp_option('nav_label_environmental_and_social','Environmental And Social'), 'slug' => 'environmental-and-social', 'fallback' => '/#planet', 'anchor_page' => 'planet', 'anchor' => 'environmental-and-social' ),
 	) ),

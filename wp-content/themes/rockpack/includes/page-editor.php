@@ -166,6 +166,7 @@ add_action('admin_enqueue_scripts',function($hook){
 function rockpack_sanitize_editor_field( $value, $field ) {
     if(!is_scalar($value)) return new WP_Error('shape','Invalid value for '.$field['label']);
     $value=(string)$value; $type=$field['type'];
+    if ( 'contact_page_map_url' === ( $field['key'] ?? '' ) ) return rockpack_sanitize_contact_map_url( $value );
     if('select'===$type) return isset($field['choices'][$value])?$value:new WP_Error('choice','Choose a valid '.$field['label']);
     if('hidden'===$type || 'number'===$type) return ''===$value?'':absint($value);
     if(in_array($type,array('image','url'),true)) {

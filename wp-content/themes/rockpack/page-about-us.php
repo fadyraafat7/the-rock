@@ -13,7 +13,7 @@ get_header();
 ?>
 <main class="about-page company-page" id="main-content">
 	<?php get_template_part( 'template-parts/inner-navigation' ); ?>
-	<?php get_template_part( 'template-parts/inner-hero', null, array( 'title' => $content['title'], 'image' => $content['hero_image'] ) ); ?>
+	<?php get_template_part( 'template-parts/inner-hero', null, array( 'title' => $content['title'], 'image' => $content['hero_image'], 'subtitle' => $content['hero_subtitle'] ) ); ?>
 
 	<section class="about-intro about-section" aria-labelledby="about-intro-title">
 		<div class="about-intro__media">
@@ -22,14 +22,26 @@ get_header();
 		</div>
 		<div class="about-intro__copy">
 			<p class="about-intro__eyebrow"><img src="<?php echo esc_url(rp_webp_image_url(  get_template_directory_uri() . '/assets/images/certifications/logo.png'  )); ?>" alt="" width="20" height="23"><?php echo esc_html( $content['eyebrow'] ); ?></p>
-			<h2 id="about-intro-title"><?php echo esc_html( $content['heading'] ); ?></h2>
-			<ul class="about-intro__bullets"><?php foreach(rockpack_collection('about_bullets') as $bullet) : ?><li><?php echo esc_html($bullet['text']); ?></li><?php endforeach; ?></ul>
+			<h2 id="about-intro-title"><?php echo preg_replace( '/\b(growth|quality|trust)\b/i', '<strong>$1</strong>', esc_html( $content['heading'] ) ); ?></h2>
+			<div class="about-intro__paragraphs">
+				<?php foreach ( rockpack_collection( 'about_bullets' ) as $bullet ) : ?>
+					<p><?php echo esc_html( $bullet['text'] ); ?></p>
+				<?php endforeach; ?>
+			</div>
 			<div class="about-tabs" data-about-tabs>
 				<div class="about-tabs__list" role="tablist" aria-label="Our capabilities">
         <?php $tabs=rockpack_collection('about_tabs'); foreach($tabs as $i=>$tab) : ?>
         <button class="rp-tab" type="button" role="tab" id="about-tab-<?php echo (int)$i; ?>" aria-controls="about-panel-<?php echo (int)$i; ?>" aria-selected="<?php echo $i?'false':'true'; ?>" tabindex="<?php echo $i?-1:0; ?>"><?php echo esc_html($tab['title']); ?></button>
         <?php endforeach; ?></div>
-        <?php foreach($tabs as $i=>$tab) : ?><div class="about-tabs__panel" id="about-panel-<?php echo (int)$i; ?>" role="tabpanel" aria-labelledby="about-tab-<?php echo (int)$i; ?>" tabindex="0" <?php if($i) echo 'hidden'; ?>><?php echo esc_html($tab['text']); ?></div><?php endforeach; ?>
+        <?php foreach ( $tabs as $i => $tab ) : ?>
+          <div class="about-tabs__panel" id="about-panel-<?php echo (int)$i; ?>" role="tabpanel" aria-labelledby="about-tab-<?php echo (int)$i; ?>" tabindex="0" <?php if($i) echo 'hidden'; ?>>
+            <?php if ( 0 === strcasecmp( trim( $tab['text'] ), 'Our operations are designed around one core principle: reliability at scale.' ) ) : ?>
+              Our operations are designed around<br>one core principle: reliability at scale.
+            <?php else : ?>
+              <?php echo esc_html( $tab['text'] ); ?>
+            <?php endif; ?>
+          </div>
+        <?php endforeach; ?>
 			</div>
 			<?php if ( ($content['button_url']) && ($content['button_text']) ) : ?><a class="about-button" href="<?php echo esc_url( $content['button_url'] ); ?>"><?php echo esc_html( $content['button_text'] ); ?><span aria-hidden="true">→</span></a><?php endif; ?>
 		</div>

@@ -124,6 +124,7 @@ Published open job opportunities supply the job links. Use **Manage job opportun
 ### Hero
 
 - Hero image URL (`about_page_hero_image`; image).
+- Hero subtitle (`about_page_hero_subtitle`; text). Optional line under the hero title; leave blank to hide it.
 - Company breadcrumb label (`breadcrumb_parent`; text).
 
 ### Introduction
@@ -166,6 +167,7 @@ Published open job opportunities supply the job links. Use **Manage job opportun
 ### Hero
 
 - Page hero image URL (`history_hero_image`; image).
+- Page hero subtitle (`history_hero_subtitle`; text). Optional line under the hero title; leave blank to hide it.
 - Page hero eyebrow (`history_hero_eyebrow`; text).
 
 ### History timeline
@@ -178,6 +180,7 @@ Published open job opportunities supply the job links. Use **Manage job opportun
 ### Hero
 
 - Certifications page - hero image URL (`certs_page_hero_image`; image).
+- Certifications page - hero subtitle (`certs_page_hero_subtitle`; text). Optional line under the hero title; leave blank to hide it.
 - Company breadcrumb label (`breadcrumb_parent`; text).
 
 ### Introduction and certifications
@@ -194,10 +197,10 @@ Published open job opportunities supply the job links. Use **Manage job opportun
 - Production - first paragraph (`certs_page_production_intro`; textarea).
 - Production - second paragraph (`certs_page_production_result`; textarea).
 
-### Quality assurance
+### Quality Assurance
 
 - Quality paragraph (`certs_page_quality_text`; textarea).
-- **Quality assurance steps** (`quality_steps`): Text.
+- **Quality Assurance steps** (`quality_steps`): Text.
 
 ### Partners
 
@@ -215,6 +218,7 @@ Published open job opportunities supply the job links. Use **Manage job opportun
 ### Hero
 
 - Hero image URL (`portfolio_page_hero_image`; image).
+- Hero subtitle (`portfolio_page_hero_subtitle`; text). Optional line under the hero title; leave blank to hide it.
 
 ### Product portfolio
 
@@ -247,6 +251,7 @@ Published open job opportunities supply the job links. Use **Manage job opportun
 ### Hero
 
 - Hero image URL (`planet_page_hero_image`; image).
+- Hero subtitle (`planet_page_hero_subtitle`; text). Optional line under the hero title; leave blank to hide it.
 
 ### Sustainable sourcing
 
@@ -275,6 +280,7 @@ Published open job opportunities supply the job links. Use **Manage job opportun
 ### Hero
 
 - Hero image URL (`contact_page_hero_image`; image).
+- Hero subtitle (`contact_page_hero_subtitle`; text). Optional line under the hero title; leave blank to hide it.
 
 ### Contact details
 

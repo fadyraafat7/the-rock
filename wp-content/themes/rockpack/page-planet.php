@@ -33,7 +33,11 @@ get_header();
         </ol>
     </section>
 
-    <section class="planet-statement" aria-labelledby="planet-statement-title"><h2 id="planet-statement-title"><?php echo esc_html( $content['statement_heading'] ); ?></h2><p><?php echo esc_html( $content['statement_text'] ); ?></p></section>
+    <section class="planet-statement" aria-labelledby="planet-statement-title">
+        <div class="planet-statement__copy">
+            <h2 id="planet-statement-title"><?php echo esc_html( $content['statement_heading'] ); ?></h2>
+            <p><?php echo esc_html( $content['statement_text'] ); ?></p>
+        </div>
+    </section>
 </main>
-<?php get_template_part( 'template-parts/footer-section' ); ?>
 <?php get_footer(); ?>

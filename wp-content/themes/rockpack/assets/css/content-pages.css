@@ -1,6 +1,5 @@
-.rp-content-intro { max-width: 920px; margin: 0 auto; padding: 40px 24px 0; text-align: center; color: #4b665e; line-height: 1.7; }
-.rp-content-intro p { margin: 0; }
 .rp-content-list { max-width: 1280px; margin: 0 auto; padding: 64px 24px 80px; color: #0a4438; }
+.careers-enquiry { max-width: 900px; }
 .rp-content-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
 .rp-content-card { overflow: hidden; border: 1px solid #d9e5de; border-radius: 16px; background: #fff; }
 .rp-content-card__image { display: block; aspect-ratio: 16 / 10; }

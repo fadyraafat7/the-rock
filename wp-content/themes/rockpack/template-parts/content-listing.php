@@ -7,14 +7,7 @@ get_header();
 ?>
 <main class="company-page content-page" id="main-content">
     <?php get_template_part('template-parts/inner-navigation'); ?>
-    <?php get_template_part('template-parts/inner-hero',null,array(
-        'title'=>$hero['title'],
-        'image'=>$hero['image'],
-        'show_lines'=>true,
-        'parent'=>__('Home','rockpack'),
-        'parent_url'=>home_url('/'),
-    )); ?>
-    <div class="rp-content-intro"><p><?php echo esc_html($jobs ? rtrim(rp_option('careers_sub','At The Rock Pack, People Are At The Core Of Everything We Do'),'. ') : rp_option('news_subtitle','Stay Connected With The Latest Updates From The Rock Pack.')); ?></p></div>
+    <?php get_template_part( 'template-parts/inner-hero', null, $hero ); ?>
     <section id="content-list" class="rp-content-list" aria-live="polite" aria-label="<?php echo esc_attr($jobs ? __('Open job opportunities','rockpack') : __('News articles','rockpack')); ?>">
         <?php if ( have_posts() ) : ?>
             <div class="rp-content-grid">
@@ -48,4 +41,4 @@ get_header();
         <?php endif; ?>
     </section>
 </main>
-<?php get_template_part('template-parts/footer-section'); get_footer(); ?>
+<?php get_footer(); ?>
