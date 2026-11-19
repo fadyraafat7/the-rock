@@ -119,6 +119,11 @@ body.rockpack-about-page { background: #fff; }
 .about-growth__dots button { width: 13px; height: 13px; padding: 3px; border: 1px solid transparent; border-radius: 50%; background: #3eb978; background-clip: content-box; cursor: pointer; }
 .about-growth__dots button[aria-pressed="true"] { border-color: #3eb978; }
 .about-growth__dots button:focus-visible { outline: 2px solid #0a4438; outline-offset: 2px; }
-.about-growth__cards p { width: 100%; max-width: 234px; font-family: Inter, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25.6px; letter-spacing: 0; text-align: center; }
+/* Regional growth card copy: Figma text box is 287px wide inside a 331px card (22px side inset), 18px / 25.6px.
+   Font size and inset scale with the card width so every card's text stays on two lines. */
+.about-growth__cards li { padding-left: clamp(16px, 1.122vw, 22px); padding-right: clamp(16px, 1.122vw, 22px); }
+.about-growth__cards p { width: 100%; max-width: none; font-family: Inter, Arial, sans-serif; font-size: clamp(13px, .918vw, 18px); font-weight: 400; line-height: 1.4222; letter-spacing: 0; text-align: center; text-wrap: balance; }
+/* "By improving responsiveness" is short enough for one line; narrow it (in em, so it holds at every size) to break like Figma. */
+.about-growth__cards li:nth-child(3) p { max-width: 9em; }
 .about-growth { position: relative; }
 .about-growth__dots { position: absolute; left: 50%; bottom: clamp(20px, 3vw, 58px); transform: translateX(-50%); margin-top: 0; }

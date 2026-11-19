@@ -22,7 +22,7 @@ get_header();
     <section class="portfolio-quality" id="quality-management" aria-labelledby="portfolio-quality-title">
         <h2 id="portfolio-quality-title"><?php echo esc_html( $content['quality_heading'] ); ?></h2>
         <div><p><?php echo esc_html( $content['quality_intro'] ); ?></p><p><?php echo esc_html( $content['quality_text'] ); ?></p></div>
-        <?php get_template_part( 'template-parts/angle-accent', null, array( 'align_right' => true ) ); ?>
+        <img class="portfolio-quality__accent" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/products/quality-triangle.svg' ); ?>" alt="" width="150" height="359" aria-hidden="true">
     </section>
 
     <section class="portfolio-materials" aria-labelledby="portfolio-materials-title">

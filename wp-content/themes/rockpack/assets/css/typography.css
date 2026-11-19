@@ -3,6 +3,7 @@
  * roles win over earlier per-page sizes. Sizes come from the tokens in
  * company-page.css; change a token there to retune a role everywhere.
  *
+ *   Page title     60 / 70 semibold (inner-page hero)
  *   Title          48 / semibold
  *   Subtitle       36 / medium
  *   Green titles   20 / regular, all caps
@@ -13,9 +14,11 @@
  * intentionally outside these roles.
  */
 
+/* Page title: inner-page hero heading */
+.company-page .rp-inner-hero h1 { font-size: var(--rp-font-page-title); font-weight: 600; line-height: 1.1667; }
+
 /* Title */
 .home-page .rp-hero .rp-hero-title,
-.company-page .rp-inner-hero h1,
 .home-page h2,
 .company-page .careers-hdr h2,
 .company-page .rp-cta h2,

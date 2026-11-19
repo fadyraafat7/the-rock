@@ -50,7 +50,7 @@ get_header();
 				$text = $slide['text'];
 				$image = $slide['image'];
 			?>
-				<article class="history-timeline__item history-timeline__item--<?php echo esc_attr( $timeline_kinds[ $index % 3 ] ); ?><?php echo $index % 2 ? ' history-timeline__item--lower' : ''; ?>">
+				<article class="history-timeline__item history-timeline__item--<?php echo esc_attr( $timeline_kinds[ $index % 3 ] ); ?><?php echo $index % 2 ? ' history-timeline__item--lower' : ''; ?> history-timeline__item--<?php echo esc_attr( sanitize_title( $title ) ); ?>">
 					<div class="history-timeline__content">
 						<div class="history-timeline__icon" aria-hidden="true"><?php if ( $slide['icon_image'] ) : ?><img src="<?php echo esc_url(rp_webp_image_url(  $slide['icon_image']  )); ?>" alt="" width="168" height="171"><?php endif; ?></div>
 						<h3><?php echo esc_html( $title ); ?></h3>
