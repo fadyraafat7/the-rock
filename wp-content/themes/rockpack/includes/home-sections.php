@@ -29,6 +29,9 @@ function rockpack_home_sections() {
 		'about'      => array( 'template' => 'about', 'fields' => array(
 			array( 'key' => 'about_eyebrow', 'label' => 'Eyebrow', 'type' => 'text', 'placeholder' => 'At THE ROCK PACK' ),
 			array( 'key' => 'about_heading', 'label' => 'Heading', 'type' => 'textarea', 'placeholder' => 'we believe packaging is far more than a functional necessity…' ),
+			array( 'key' => 'about_growth_url', 'label' => 'Heading - "growth" link URL', 'type' => 'url', 'placeholder' => '/about-us/' ),
+			array( 'key' => 'about_quality_url', 'label' => 'Heading - "quality" link URL', 'type' => 'url', 'placeholder' => '/certifications/' ),
+			array( 'key' => 'about_trust_url', 'label' => 'Heading - "trust" link URL', 'type' => 'url', 'placeholder' => '/history/' ),
 			array( 'key' => 'about_bullet1', 'label' => 'Bullet 1', 'type' => 'textarea', 'placeholder' => 'We are a high-performance aseptic packaging producer…' ),
 			array( 'key' => 'about_bullet2', 'label' => 'Bullet 2', 'type' => 'textarea', 'placeholder' => 'By combining advanced technology…' ),
 			array( 'key' => 'about_tab1_label', 'label' => 'First tab label', 'type' => 'text', 'placeholder' => 'Our Operations' ),

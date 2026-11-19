@@ -83,7 +83,7 @@ body.rockpack-home-page { --company-page-width: 100%; --home-forest: #0a4438; --
 .rp-tab[aria-selected="true"] { border-bottom-color: var(--home-green); color: var(--home-green); }
 .rp-tab-body { font-size: clamp(12px, .833vw, 16px); line-height: 1.625; padding: clamp(25px, 1.98vw, 38px) 10px 0; max-width: min(420px, 21.875vw); min-height: 95px; }
 .rp-about .btn-prim { margin-top: clamp(30px, 2.08vw, 40px); }
-.rp-about .home-angle-accent { bottom: 110px; width: clamp(64px, 8.4vw, 162px); }
+.rp-about .home-angle-accent { bottom: 110px; width: clamp(64px, 8.28vw, 159px); }
 
 /* History and certifications. */
 .rp-history { position: relative; text-align: center; background: white; padding: clamp(65px, 5.21vw, 100px) 12% clamp(65px, 5.73vw, 110px); }

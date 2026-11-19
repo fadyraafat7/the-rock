@@ -24,7 +24,7 @@ body.rockpack-contact-page { --company-page-width: 100%; background: white; }
 .contact-enquiry__copy { color: white; position: relative; }
 .contact-enquiry__eyebrow { font-size: clamp(18px, 1.25vw, 24px); font-weight: 500; margin-bottom: clamp(20px, 1.25vw, 24px) !important; }
 .contact-enquiry__copy > p:last-of-type { font-size: clamp(14px, 1.04vw, 20px); line-height: 1.5; margin-top: clamp(24px, 1.25vw, 24px); }
-.contact-enquiry__copy > svg { position: absolute; color: #79d1a4; opacity: .23; width: 73%; right: -26%; top: 20%; z-index: -1; pointer-events: none; }
+.contact-enquiry__copy > svg { position: absolute; color: #42c287; /* Figma: #0A4438 at 50% with screen blend over #3EB978 */ width: 73%; right: -26%; top: 20%; z-index: -1; pointer-events: none; }
 .contact-enquiry__form { position: relative; min-width: 0; padding: clamp(38px, 3.65vw, 70px) clamp(30px, 4.17vw, 80px); border-radius: clamp(18px, 1.04vw, 20px); background: white; }
 .contact-enquiry > .wpcf7 { min-width: 0; }
 .contact-enquiry__form .wpcf7-form-control-wrap { display: block; min-width: 0; }
@@ -100,3 +100,34 @@ body.rockpack-contact-page { --company-page-width: 100%; background: white; }
   .contact-details__card:nth-child(2) > svg { padding: clamp(6px, .52vw, 10px); }
 }
 .contact-details__card:first-child > svg { opacity: .8; }
+
+/* Icons sit in the row of the text under each title, top-aligned with it. */
+.contact-details__card { display: grid; grid-template-columns: 40px minmax(0, 1fr); grid-template-rows: auto auto; row-gap: 0; column-gap: 25px; align-content: start; align-items: start; }
+.contact-details__card:nth-child(3) a { white-space: nowrap; } /* one email per line */
+.contact-details__card > div { display: contents; }
+.contact-details__card > svg { grid-column: 1; grid-row: 2; justify-self: center; }
+.contact-details__card h3 { grid-column: 2; grid-row: 1; }
+.contact-details__card p { grid-column: 2; grid-row: 2; }
+@media (min-width: 851px) {
+  /* Card widths follow their text so the address and the emails each stay on two lines. */
+  .contact-details__cards { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr) minmax(0, 1.2fr); }
+  .contact-details__address { white-space: pre; }
+  .contact-details__card h3 { white-space: nowrap; }
+  .contact-details__card { grid-template-columns: clamp(46px, 3.646vw, 70px) minmax(0, 1fr); row-gap: 0; column-gap: clamp(18px, 1.6vw, 30px); }
+  .company-page .contact-details__cards .contact-details__card p { font-size: clamp(12px, 1.05vw, var(--rp-font-body)); }
+  /* Same icon box on every card so all three icons share one centre line. */
+  .contact-details__card:nth-child(3) > svg { box-sizing: border-box; width: clamp(46px, 3.646vw, 70px); height: clamp(46px, 3.646vw, 70px); max-height: none; padding: 0 calc((clamp(46px, 3.646vw, 70px) - clamp(26px, 2.3vw, 44px)) / 2); }
+}
+@media (max-width: 1150px) and (min-width: 851px) {
+  .company-page .contact-details__cards .contact-details__card p { font-size: clamp(11px, 1.3vw, var(--rp-font-body)); }
+  .contact-details__card { column-gap: 14px; }
+}
+
+/* Form intro text: Figma "body 2 reg" (Inter 400, 20 / 30, 587px wide at 1920px) */
+@media (min-width: 851px) {
+  .contact-page.company-page .contact-enquiry__copy > p:not(.contact-enquiry__eyebrow) { max-width: 29.35em; font-size: clamp(14px, 1.042vw, 20px); font-weight: 400; line-height: 1.5; letter-spacing: 0; }
+}
+
+/* Triangle from Figma (159 x 413 at 1920px) */
+.contact-details .home-angle-accent--about { top: 20%; height: auto; width: clamp(64px, 8.28vw, 159px); transform: none; }
+@media (max-width: 1150px) and (min-width: 851px) { .contact-details .home-angle-accent--about { width: 5%; } }

@@ -10,7 +10,7 @@ function rockpack_editor_layout( $kind ) {
         'home' => array(
             'Hero' => $group( array(), array( 'hero_images' ) ),
             'Statistics' => $group( array(), array( 'stats' ) ),
-            'About' => $group( array( 'about_image', 'home_image_description_71', 'about_eyebrow', 'about_btn_text', 'about_btn_url' ), array( 'home_bullets', 'home_tabs' ) ),
+            'About' => $group( array( 'about_image', 'home_image_description_71', 'about_eyebrow', 'about_growth_url', 'about_quality_url', 'about_trust_url', 'about_btn_text', 'about_btn_url' ), array( 'home_bullets', 'home_tabs' ) ),
             'History' => $group( array( 'history_learn_text', 'history_learn_url' ), array( 'history' ) ),
             'Certifications' => $group( array( 'certs_btn_text', 'certs_btn_url' ), array( 'certs' ) ),
             'Products and Services' => $group( array( 'products_learn_text', 'products_learn_url' ), array( 'products' ) ),

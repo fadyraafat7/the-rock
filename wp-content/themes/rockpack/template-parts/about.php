@@ -24,7 +24,14 @@ $image   = rp_option( 'about_image', get_template_directory_uri() . '/assets/ima
         <img src="<?php echo esc_url(rp_webp_image_url(  get_template_directory_uri() . '/assets/images/certifications/logo.png'  )); ?>" alt="" width="24" height="27" loading="lazy">
         <?php echo esc_html( $eyebrow ); ?>
       </div>
-      <h2 class="sec-title" id="home-about-title"><?php echo wp_kses( preg_replace( '/\b(growth|quality|trust)\b/i', '<strong>$1</strong>', $heading ), [ 'em' => [], 'strong' => [] ] ); ?></h2>
+      <?php
+      $heading_html = preg_replace_callback( '/\b(growth|quality|trust)\b/i', static function ( $m ) {
+          $word = esc_html( $m[1] );
+          $url  = rp_option( 'about_' . strtolower( $m[1] ) . '_url', '' );
+          return $url ? '<a href="' . esc_url( $url ) . '"><strong>' . $word . '</strong></a>' : '<strong>' . $word . '</strong>';
+      }, esc_html( $heading ) );
+      ?>
+      <h2 class="sec-title" id="home-about-title"><?php echo wp_kses( $heading_html, [ 'em' => [], 'strong' => [], 'a' => [ 'href' => [] ] ] ); ?></h2>
       <div class="about-paragraphs">
         <?php foreach ( rockpack_collection( 'home_bullets' ) as $bullet ) : ?>
           <p><?php echo esc_html( $bullet['text'] ); ?></p>
@@ -42,5 +49,5 @@ $image   = rp_option( 'about_image', get_template_directory_uri() . '/assets/ima
       <?php if ( ($btn_url) && ($btn_text) ) : ?><a href="<?php echo esc_url( $btn_url ); ?>" class="btn-prim"><?php echo esc_html( $btn_text ); ?> &nbsp;→</a><?php endif; ?>
     </div>
   </div>
-  <?php get_template_part( 'template-parts/angle-accent' ); ?>
+  <?php get_template_part( 'template-parts/angle-accent', null, array( 'variant' => 'about' ) ); ?>
 </section>

@@ -97,7 +97,7 @@ html { scroll-padding-top: 130px; }
 .rockpack-company-page .social-row svg { width: 14px; height: 14px; flex: none; color: #65d89b; }
 .rockpack-company-page .footer-btm { margin-top: 40px; text-align: right; }
 .rockpack-company-page .footer-btm p { margin: 0; font-size: clamp(8px, .714vw, 14px); }
-.rockpack-company-page .footer-btm a { text-decoration: underline; text-underline-offset: 3px; }
+.rockpack-company-page .footer-btm a { text-decoration: none; }
 
 @media (max-width: 850px) {
   body.rockpack-company-page { overflow-x: clip; }

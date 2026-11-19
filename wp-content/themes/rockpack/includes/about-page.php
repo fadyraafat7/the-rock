@@ -18,7 +18,7 @@ function rockpack_about_page_fields() {
 		'tab_2_label' => array( 'Second tab - label', 'text', 'Our Production' ),
 		'tab_2_text' => array( 'Second tab - content', 'textarea', 'Our production facilities employ world-class European equipment to ensure every pack provides superior product protection and hygiene.' ),
 		'button_text' => array( 'Introduction - button text', 'text', 'Learn More' ),
-		'button_url' => array( 'Introduction - button URL', 'url', '#contact' ),
+		'button_url' => array( 'Introduction - button URL', 'url', home_url( '/contact-us/#contact-form' ) ),
 		'foundation_heading' => array( 'Technical foundation - heading', 'text', 'Technical Foundation & 30-Year Heritage' ),
 		'foundation_text' => array( 'Technical foundation - description', 'textarea', 'Behind this scale is a strong technical foundation. With 30 years of experience in printing, packaging and material science, The Rock Pack brings together precision, process control and advanced aseptic technology to meet international standards for safety, hygiene and performance.' ),
 		'foundation_image' => array( 'Technical foundation - background image URL', 'url', $assets . 'foundation.jpg' ),
@@ -37,7 +37,7 @@ function rockpack_about_page_fields() {
 		'closing_heading' => array( 'Closing - heading', 'textarea', 'At The Rock Pack, we are building more than just packaging solutions.' ),
 		'closing_text' => array( 'Closing - description', 'textarea', 'We are building the foundation that allows brands to grow, innovate and lead with confidence.' ),
 		'closing_button_text' => array( 'Closing - button text', 'text', 'Connect with our team' ),
-		'closing_button_url' => array( 'Closing - button URL', 'url', '#contact' ),
+		'closing_button_url' => array( 'Closing - button URL', 'url', home_url( '/contact-us/#contact-form' ) ),
 	);
 	foreach ( array( 'Experience', 'Precision', 'Control', 'Safety', 'Hygiene', 'Performance' ) as $i => $label ) {
 		$definitions[ 'foundation_label_' . ( $i + 1 ) ] = array( 'Technical foundation - ' . $label . ' label', 'text', $label );

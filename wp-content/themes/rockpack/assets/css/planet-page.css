@@ -21,7 +21,7 @@
 .planet-esg { padding: clamp(65px, 4.39vw, 86px) 3.75% clamp(65px, 5.1vw, 100px); }
 .planet-esg__header { display: grid; grid-template-columns: 49% 45%; gap: 6%; align-items: center; padding: 0 8.4%; }
 .planet-esg__header h2 { max-width: 690px; color: #0a4438; font-size: clamp(30px, 2.96vw, 58px); line-height: 1.05; font-weight: 600; text-wrap: balance; }
-.planet-esg__header p { font-size: clamp(16px, 1.224vw, 24px); line-height: 1.3; color: #333; letter-spacing: -.045em; }
+.planet-esg__header p { font-size: clamp(16px, 1.224vw, 24px); line-height: 1.3; color: #333; letter-spacing: -.045em; max-width: 25em; /* breaks before "through responsible" like Figma */ }
 .planet-esg__pillars { display: grid; grid-template-columns: 32% 36% 32%; counter-reset: planet-pillar; list-style: none; padding: 0; margin: clamp(70px, 6.73vw, 132px) 0 0; border-block: 1px solid #88d5ac; }
 .planet-esg__pillars > li { counter-increment: planet-pillar; padding: clamp(25px, 1.63vw, 32px) 13% clamp(25px, 1.53vw, 30px); min-width: 0; }
 .planet-esg__pillars > li + li { border-left: 1px solid #88d5ac; }
